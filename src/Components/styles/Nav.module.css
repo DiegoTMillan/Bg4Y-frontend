@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+:root{
+    font-size: 0.785rem;
+}
+.containerNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: darkslateblue;
+    width: 100%;
+    padding: 2em;
+}
+.logoNav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-left: .5em;
+}
+.logoNav p{
+    margin-left: 25px;
+}
+.menuNav{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+}
+.menuNav p {
+    margin-right: 25px;
+}
+.loginNav{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    margin-right: .5em;
+}

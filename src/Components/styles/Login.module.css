@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+:root{
+    font-size: 0.785rem;
+}
+.center{
+    margin-top: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card1{
+    display:flex;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+    background-color: #faf9fe;
+    border: solid 3px grey;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px grey;
+    margin-top: 4em;
+}
+.card1 .iconDice{
+    text-align: center;
+    font-size: 4em;
+    color: #483D8B;
+    margin-bottom: 0.25em;
+}
+h1 {
+    text-align: center,
+}
+form{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+label{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align:left;
+    font-size: 1.5rem;
+}
+.input2{
+    padding: 12px 25px;
+    border-radius: 5px,
+}
+.registeredLog{
+    padding: 1em;
+    font-size: 1.3rem;
+}
+.registeredLog p{
+    margin-bottom: 1em;
+    font-size: 1.3rem;
+}
+.button button{
+    margin-top: 0.5em;
+    width: 100%;
+    padding: 8px 4px;
+    border-radius: 5px;
+    background-color: #483D8B;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+    border: 0;
+}
