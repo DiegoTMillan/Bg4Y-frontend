@@ -6,10 +6,9 @@ export const Nav = () => {
     <div className={classes.containerNav}>
         <div className={classes.logoNav}>
         <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
-        <p>Boardgames 4 You</p>
+        <p>Bg4U</p>
       </div>
       <div className={classes.menuNav}>
-        <p>About us</p>
         <p>Home</p>
         <p>Boardgames</p>
       </div>
