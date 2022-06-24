@@ -1,10 +1,10 @@
 import {Fragment} from "react";
-import {Nav} from "../Components/Nav";
+import {Header} from "../Components/Header";
 
 export const Home = () => {
     return (
         <Fragment>
-            <Nav/>
+            <Header/>
             <h1>HOME</h1>
         </Fragment>
     )

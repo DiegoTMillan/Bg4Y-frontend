@@ -4,7 +4,8 @@ import classes from "../Components/styles/Login.module.css";
 import { useNavigate, Navigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthContext";
 import { useContext, useState } from "react";
-import {Nav} from "../Components/Nav"
+import {Header} from "../Components/Header";
+import { Footer } from "../Components/Footer";
 
 export const Login = (props) => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ export const Login = (props) => {
   if (token) return <Navigate to="/dashboard" replace />;
   return (
     <Fragment>
-      <Nav/>
+      <Header/>
       <div className={classes.center}>
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
@@ -69,6 +70,7 @@ export const Login = (props) => {
           </form>
         </div>
       </div>
+      <Footer/>
     </Fragment>
   );
 };

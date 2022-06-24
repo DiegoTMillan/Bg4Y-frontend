@@ -1,0 +1,177 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+
+/* reboot css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  font-size: 0.785rem;
+}
+
+/* footer css */
+footer{
+    align-items: center;
+    justify-content: center;
+    background-color: #faf9fe;
+    width: 100%;
+    border-top: 3px solid grey;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.mainFooter{
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #483d8b;
+    font-weight: bold;
+    font-family: "Lobster";
+}
+.iconDice{
+    font-size: 2rem;
+    padding: .2em;
+}
+.socialMedia{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: auto;
+    padding: .5em;
+    font-size: 1.3rem;
+}
+.fb{
+    color: #4267B2;
+}
+.insta{
+    color: #F56040;
+}
+.linkedin{
+    color: #0e76a8;
+}
+.credits{
+    display: flex;
+    justify-content: center;
+    font-family: 'Hind Madurai';
+}
+.brush{
+    color:#483d8b;
+    padding: 0em .4em;
+}
+
+/* items that do not appear in some breakpoints */
+.personalLink{
+  text-decoration: none;
+}
+.asideFooter{
+    display: none;
+}
+.declaration{
+    display: none;
+}
+
+/* breakpoints  */
+
+/* 768px */
+@media (min-width: 768px) {
+    .container{
+        display: flex;
+    }
+    .mainFooter{
+        width: 50%;
+    }
+    .asideFooter{
+        display:inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid grey;
+        width: 50%;
+    }
+    .group1{
+        display: flex;
+        flex-direction: column;
+        margin-right: .5em;
+    }
+    .group2{
+        display: flex;
+        flex-direction: column;
+        margin-left: .5em;
+    }
+    .group1 a{
+        text-decoration: none;
+        padding: .4em
+    }
+    .group2 a{
+        text-decoration: none;
+        padding: .4em
+    }
+}
+
+/* 992px */
+@media (min-width: 992px){
+    .socialMedia {
+        width: 50%;
+    }
+    .brush {
+        padding: 0em .8em
+    }
+    .group1 {
+        margin-right: 2em;
+    }
+    .group2 {
+        margin-right: 2em;
+    }
+}
+
+/* 1200px */
+@media (min-width:1200px) {
+    .mainFooter {
+        width: 33%;
+    }
+    .asideFooter{
+        width: 33%;
+        border-right: 1px solid grey;
+    }
+    .declaration{
+        display: inline-block;
+        width:33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    .heartIcon {
+        color: red;
+        text-align: center;
+        padding: 1em;
+    }
+    .declaration p{
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    /* added some scale transform for icons */
+    .socialMedia div:hover{
+        transform: scale(1.4);
+        transition:all .2s ease-in-out;
+    }
+    .personalLink:hover{
+        transform: scale(1.2);
+        transition:all .2s ease-in-out;
+    }
+    .asideFooter a:hover{
+        transform: scale(1.4);
+        transition:all .2s ease-in-out
+    }
+}
+

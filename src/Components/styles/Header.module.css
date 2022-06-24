@@ -1,3 +1,4 @@
+/* import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
 * {
   box-sizing: border-box;
@@ -8,39 +9,30 @@
 :root {
   font-size: 0.785rem;
 }
-header {
+
+/* great container */
+.container {
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: #faf9fe;
-  width: 100%;
   padding: 1em;
   border-bottom: 3px solid grey;
+  font-family: "Hind Madurai";
 }
 .iconDice {
   font-size: 4rem;
   padding: 0.2em;
 }
 .logoNav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-size: 2.5rem;
   color: #483d8b;
   font-weight: bold;
   font-family: "Lobster";
 }
-.logoNav p {
-  margin-left: 10px;
-}
 .menuNav {
-  display: flex;
-  width: 50%;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  display:none;
   font-weight: bold;
-  font-family: "Hind Madurai";
 }
 .menuNav a {
   padding: 0.5em;
@@ -50,11 +42,28 @@ header {
 }
 .loginNav {
   display: flex;
-  align-items: center;
   font-size: 4rem;
   color: #483d8b;
 }
+/* these items only is visible under 565px */
+.optionalNav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #483d8b;
+  padding: 1em;
+  border-bottom: 3px solid grey;
+}
+.optionalNav a {
+  text-decoration: none;
+  color: white;
+  padding: .2em;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
+/* breakpoints*/
+
+/* 768px */
 @media (min-width: 768px) {
   .logoNav {
     font-size: 3rem;
@@ -63,25 +72,21 @@ header {
     font-size: 5rem;
   }
   .menuNav {
-    flex-direction: row;
+    display: block;
   }
   .menuNav a {
     font-size: 2rem;
   }
-  @media (min-width: 992px) {
-    .iconDice{
-        font-size: 6rem;
-    }
-    .menuNav a {
-      font-size: 2.7rem;
-    }
-    .loginNav{
-        font-size:6rem;
-    }
+  .optionalNav{
+    display: none;
   }
+  /* 1200px, added hover for mouse clicks */
   @media (min-width: 1200px) {
     .menuNav{
-        justify-content: space-between;
+        justify-content: space-around;
+    }
+    .menuNav a{
+      padding: 2em;
     }
     .menuNav a:hover{
         transform: scale(1.3);
