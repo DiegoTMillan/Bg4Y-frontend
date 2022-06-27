@@ -14,6 +14,7 @@
 
 /* footer css */
 footer{
+    align-self: flex-end;
     align-items: center;
     justify-content: center;
     background-color: #faf9fe;

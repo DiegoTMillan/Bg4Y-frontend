@@ -1,3 +1,4 @@
+//import components, tools and css
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import classes from "../Components/styles/Login.module.css";
@@ -8,12 +9,14 @@ import {Header} from "../Components/Header";
 import { Footer } from "../Components/Footer";
 
 export const Login = (props) => {
+  //navigate, usecontext and form tools
   const navigate = useNavigate();
   const { token, setToken } = useContext(AuthContext);
   const [formValues, setFormValues] = useState({ email: "", password: "" });
   const handleInputChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
     fetch("127.0.0.1:8000/users", {
@@ -29,6 +32,7 @@ export const Login = (props) => {
         navigate("/dashboard", { replace: true });
       });
   };
+  //token, or not token, that's the question
   if (token) return <Navigate to="/dashboard" replace />;
   return (
     <Fragment>
@@ -36,7 +40,7 @@ export const Login = (props) => {
       <div className={classes.center}>
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
-          <h1>BG4U</h1>
+          <h1>Bg4U</h1>
           <form onSubmit={handleOnSubmit}>
             <label htmlFor="email">Write your email</label>
             <input
@@ -62,7 +66,7 @@ export const Login = (props) => {
             />
             <div className={classes.registeredLog}>
               <p>¿Are you not registered?</p>
-              <Link to="/register">Click here</Link>
+              <Link className={classes.link} to="/register">Click here</Link>
             </div>
             <div className={classes.button}>
               <button type="submit">Login</button>
