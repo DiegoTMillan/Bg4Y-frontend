@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import { Fragment } from "react";
 import {Navigate} from "react-router-dom";
-import { AuthContext } from "../Components/AuthContext";
+import { AuthContext } from "../../Components/AuthContext";
 
 export const Dashboard = () => {
     const {token, setToken} = useContext(AuthContext);

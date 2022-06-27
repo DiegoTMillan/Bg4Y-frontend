@@ -1,4 +1,4 @@
-import classes from "./styles/Logo.module.css";
+import classes from "./Logo.module.css";
 
 export const Logo = () => {
   return (

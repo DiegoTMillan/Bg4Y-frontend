@@ -1,5 +1,15 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+/* reboot css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 #root{
   width: 100vw;
+  font-size: 0.785rem;
 }
 body {
   width: 100%;

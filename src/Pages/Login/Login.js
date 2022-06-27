@@ -1,12 +1,10 @@
 //import components, tools and css
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import classes from "../Components/styles/Login.module.css";
+import classes from "./Login.module.css";
 import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../Components/AuthContext";
+import { AuthContext } from "../../Components/AuthContext";
 import { useContext, useState } from "react";
-import {Header} from "../Components/Header";
-import { Footer } from "../Components/Footer";
 
 export const Login = (props) => {
   //navigate, usecontext and form tools
@@ -19,7 +17,7 @@ export const Login = (props) => {
   //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch("127.0.0.1:8000/users", {
+    fetch("127.0.0.1:8000/login", {
       method: "POST",
       body: JSON.stringify(formValues),
       headers: {
@@ -28,7 +26,7 @@ export const Login = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setToken(data.token);
+        // setToken(data.token);
         navigate("/dashboard", { replace: true });
       });
   };
@@ -36,7 +34,6 @@ export const Login = (props) => {
   if (token) return <Navigate to="/dashboard" replace />;
   return (
     <Fragment>
-      <Header/>
       <div className={classes.center}>
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
@@ -74,7 +71,6 @@ export const Login = (props) => {
           </form>
         </div>
       </div>
-      <Footer/>
     </Fragment>
   );
 };

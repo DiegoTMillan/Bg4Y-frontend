@@ -1,10 +1,13 @@
 import {Routes, Route, Navigate} from "react-router-dom";
-import {Home} from "./Pages/Home";
-import {Login} from "./Pages/Login";
-import {Dashboard} from "./Pages/Dashboard";
-import {NotFound} from "./Pages/NotFound";
-import {Boardgames} from "./Pages/Boardgames";
-import {Register} from "./Pages/Register";
+import {Home} from "./Pages/Home/Home";
+import {Login} from "./Pages/Login/Login";
+import {Dashboard} from "./Pages/Dashboard/Dashboard";
+import {NotFound} from "./Pages/NotFound/NotFound";
+import {Boardgames} from "./Pages/Boardgames/Boardgames";
+import {Register} from "./Pages/Register/Register";
+import {New1} from "./Pages/News/New1"
+import {New2} from "./Pages/News/New2"
+import {New3} from "./Pages/News/New3"
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/boardgames" element={<Boardgames/>}/>
       <Route path="/register" element={<Register/>}/>
+      <Route path="/new1" element={<New1/>}/>
+      <Route path="/new2" element={<New2/>}/>
+      <Route path="/new3" element={<New3/>}/>
       <Route path="/404" element={<NotFound/>}/>
       <Route path="*" element={<Navigate to="404" replace />}/>
     </Routes>

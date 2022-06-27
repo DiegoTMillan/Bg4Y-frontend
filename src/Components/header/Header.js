@@ -1,7 +1,6 @@
 // import css
-import classes from "./styles/Header.module.css";
-import {Logo} from "./Logo"
-
+import classes from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -14,9 +13,9 @@ export const Header = () => {
         </div>
         {/* Navigation menu */}
         <div className={classes.menuNav}>
-          <a href="/">Home</a>
-          <a href="/boardgames">Boardgames</a>
-          <a href="/dashboard">Profile</a>
+          <Link to={`/`}>Home</Link>
+          <Link to="/boardgames">Boardgames</Link>
+          <Link to="/dashboard">Profile</Link>
         </div>
         <div
           // login button
@@ -30,9 +29,9 @@ export const Header = () => {
       </div>
       {/* this navigation menu only appears under 565px */}
       <div className={classes.optionalNav}>
-        <a href="/">Home</a>
-        <a href="/boardgames">Boardgames</a>
-        <a href="/dashboard">Profile</a>
+        <Link to={`/`}>Home</Link>
+        <Link to="/boardgames">Boardgames</Link>
+        <Link to="/dashboard">Profile</Link>
       </div>
     </header>
   );

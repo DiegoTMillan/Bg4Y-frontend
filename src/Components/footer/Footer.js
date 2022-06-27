@@ -1,5 +1,6 @@
 // import css
-import classes from "./styles/Footer.module.css";
+import classes from "./Footer.module.css";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -49,13 +50,13 @@ export const Footer = () => {
         {/* container for second group of elements. In first breakpoint is dissapeared */}
         <div className={classes.asideFooter}>
           <div className={classes.group1} >
-            <a href="/">Home</a>
-            <a href="/boardgames">Boardgames</a>
-            <a href="/dashboard">Profile</a>
+          <Link to={`/`}>Home</Link>
+          <Link to="/boardgames">Boardgames</Link>
+          <Link to="/dashboard">Profile</Link>
           </div>
           <div className={classes.group2} >
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
+          <Link to="/register">Sign Up</Link>
+          <Link to="/login">Login</Link>
           </div>
         </div>
         {/* container for last group of items. Only appears with the last breakpoint */}

@@ -1,12 +1,10 @@
 //import components, tools, and css
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import classes from "../Components/styles/Register.module.css";
+import classes from "./Register.module.css";
 import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../Components/AuthContext";
+import { AuthContext } from "../../Components/AuthContext";
 import { useContext, useState } from "react";
-import { Header } from "../Components/Header";
-import { Footer } from "../Components/Footer";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -41,7 +39,6 @@ export const Register = () => {
   };
   return (
     <Fragment>
-      <Header />
       <div className={classes.center}>
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
@@ -50,7 +47,7 @@ export const Register = () => {
           <form onSubmit={handleOnSubmit}>
             <div className={classes.columns}>
               <div className={classes.column1}>
-                <label htmlFor="first_name">Write your name *</label>
+                <label htmlFor="first_name">Write your name</label>
                 <input
                   id="first_name"
                   className={classes.input1}
@@ -58,9 +55,10 @@ export const Register = () => {
                   name="first_name"
                   value={formValues.first_name}
                   placeholder="First Name"
+                  required
                   onChange={handleInputChange}
                 />
-                <label htmlFor="last_name">Write your surname *</label>
+                <label htmlFor="last_name">Write your surname</label>
                 <input
                   id="last_name"
                   className={classes.input2}
@@ -68,9 +66,10 @@ export const Register = () => {
                   name="last_name"
                   value={formValues.last_name}
                   placeholder="Last Name"
+                  required
                   onChange={handleInputChange}
                 />
-                <label htmlFor="email">Write a valid email *</label>
+                <label htmlFor="email">Write a valid email</label>
                 <input
                   id="email"
                   className={classes.input3}
@@ -78,15 +77,17 @@ export const Register = () => {
                   name="email"
                   value={formValues.email}
                   placeholder="Email"
+                  required
                   onChange={handleInputChange}
                 />
-                <label htmlFor="password">Write your password *</label>
+                <label htmlFor="password">Write your password</label>
                 <input
                   id="password"
                   className={classes.input4}
                   type="password"
                   name="password"
                   placeholder="Password"
+                  required
                   onChange={handleInputChange}
                   value={formValues.password}
                 />
@@ -102,18 +103,19 @@ export const Register = () => {
                   onChange={handleInputChange}
                   value={formValues.phone}
                 />
-                <label htmlFor="city">Write the name of your city *</label>
+                <label htmlFor="city">Write the name of your city</label>
                 <input
                   id="city"
                   className={classes.input6}
                   type="text"
                   name="city"
                   placeholder="City Name"
+                  required
                   onChange={handleInputChange}
                   value={formValues.city}
                 />
                 <label htmlFor="district">
-                  Write the name of your district *
+                  Write the name of your district
                 </label>
                 <input
                   id="district"
@@ -121,6 +123,7 @@ export const Register = () => {
                   type="text"
                   name="district"
                   placeholder="District Name"
+                  required
                   onChange={handleInputChange}
                   value={formValues.district}
                 />
@@ -136,16 +139,12 @@ export const Register = () => {
                 />
               </div>
             </div>
-            <div className={classes.rules}>
-              <p>(*) required field</p>
-            </div>
             <div className={classes.button}>
               <button type="submit">Sign Up</button>
             </div>
           </form>
         </div>
       </div>
-      <Footer />
     </Fragment>
   );
 };

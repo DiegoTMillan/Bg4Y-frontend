@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.module.css';
 import App from './App';
+import {Header} from "./Components/header/Header"
+import {Footer} from "./Components/footer/Footer"
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './Components/AuthContext';
 import {BrowserRouter} from "react-router-dom"
@@ -10,7 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <AuthProvider>
   <BrowserRouter>
+  <Header/>
     <App />
+  <Footer/>
   </BrowserRouter>
 </AuthProvider>
     

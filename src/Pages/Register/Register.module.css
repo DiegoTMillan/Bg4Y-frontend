@@ -13,7 +13,7 @@
 }
 .center{
     width: 100vw;
-    min-height: 70vh;
+    min-height: 75vh;
     font-family: "Hind Madurai";
 }
 /* login card */
@@ -23,7 +23,7 @@
     flex-direction: column;
     margin: auto;
     margin-top: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     padding: 1.5em;
     text-align: center;
     background-color: #faf9fe;
@@ -89,7 +89,7 @@ input{
 }
 
 /* breakpoints */
-@media (max-width: 560px){
+@media (max-width: 630px){
     .columns{
         flex-direction: column;
     }
