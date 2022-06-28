@@ -1,0 +1,69 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  font-size: 0.785rem;
+}
+.center{
+    font-family: "Hind Madurai";
+}
+.titles{
+    display:none;
+}
+.center h1{
+    width: 95%;
+    margin:auto;
+    padding-top: .5em;
+    font-size: 2.5rem;
+    color: #483D8B;
+}
+
+
+/* 768px */
+@media (min-width: 768px){
+    .center h1{
+        font-size: 3.5rem;
+    }
+}
+/* 992px */
+@media (min-width: 992px){
+    .center h1{
+        padding-left: 2em;
+    }
+}
+/* 1200px */
+@media (min-width:1200px) {
+    .center{
+        display: flex;
+    }
+    .news{
+        width: 70%;
+    }
+    .reviews{
+        width: 40%;
+    }
+    .newsTitle{
+        display: none;
+    }
+    .reviewsTitle{
+        display:none;
+    }
+    .titles {
+        display: flex;
+        justify-content: space-around;
+        font-size: 2rem;
+        color: #483D8B;
+        padding:1em 0em;
+    }
+    .titles h1:first-child{
+        margin-left: 3em;
+    }
+    .titles h1:nth-child(2){
+        margin-left: 4.5em;
+    }
+}

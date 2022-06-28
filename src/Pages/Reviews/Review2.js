@@ -1,22 +1,17 @@
 //import components, tools, and css
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import classes from "./News.module.css";
-import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthContext";
-import { useContext, useState } from "react";
+import { Fragment } from "react"
 import { TextPage } from "../../Components/textPage/TextPage";
 
-export const New2 = () => {
+export const Review2 = () => {
     return (
         <Fragment>
             <TextPage
-            addTitle="ABSTRACT GAMES"
-            url="https://images.pexels.com/photos/8111328/pexels-photo-8111328.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8111328.jpg&fm=jpg"
-            mainTitle="Abstract games, are they here to stay?"
+            addTitle="REVIEW"
+            url="https://live.staticflickr.com/65535/52074782049_19320915ec_b.jpg"
+            mainTitle="Ark Nova, Is it really the best boardgame of Essen 2021?"
             subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus lacus mi, non congue purus lobortis ut. Nam pulvinar bibendum dui. Aliquam porttitor tincidunt tortor."
             author="Diego Tapia "
-            date=" 25/06/2022"
+            date=" 07/06/2022"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in orci volutpat, pharetra erat a, pharetra dui. Cras urna elit, gravida non enim in, laoreet hendrerit mi. Vestibulum felis dui, ultricies eget eleifend vitae, convallis eu dui. Sed tristique diam quis nulla vulputate, sit amet semper neque interdum. Aenean magna lorem, egestas id accumsan a, blandit eu diam. Quisque consectetur venenatis metus vel vestibulum. Proin sed justo vitae orci fringilla dignissim vel in nisi. Mauris sit amet nulla lacus. Proin sed risus consequat, faucibus turpis et, tincidunt neque. In cursus justo a nulla suscipit, vitae vehicula nibh imperdiet. Praesent diam urna, fermentum vitae porta vel, vulputate quis orci.
 
             Praesent molestie sagittis ex, quis suscipit tortor sollicitudin ut. Fusce fringilla et ligula non tempus. Nam eu ligula et justo dapibus cursus ut id elit. Suspendisse rhoncus, leo vitae maximus tincidunt, mauris risus pellentesque arcu, nec dictum nibh libero vitae neque. Maecenas maximus aliquet lorem, eget aliquet nulla dapibus sit amet. Cras tellus lorem, hendrerit vitae elit commodo, congue tincidunt odio. Integer gravida ex sit amet magna molestie tincidunt. In luctus tellus finibus erat imperdiet sollicitudin. Mauris sed ex nec felis fringilla maximus. Quisque mi tortor, feugiat eu porta sed, venenatis et diam. Duis pharetra pellentesque eros eu egestas. Vivamus mauris turpis, finibus vitae pellentesque in, ullamcorper sit amet odio. Vestibulum ultrices elit non orci imperdiet, a commodo mi fermentum.

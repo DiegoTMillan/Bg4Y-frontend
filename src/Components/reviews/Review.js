@@ -1,17 +1,14 @@
 //import components, tools, and css
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import classes from "./News.module.css";
-import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthContext";
-import { useContext, useState } from "react";
+import classes from "./Review.module.css";
 
-export const News = (props) => {
+export const Review = (props) => {
     return (
         <Fragment>
             <div className={classes.container} >
                 <div>
-                <img className={classes.newImg} src={props.url}></img>
+                <img className={classes.revImg} src={props.url}></img>
                 <Link className={classes.link} to={props.link}>{props.text}</Link>
                 <p>{props.author} | {props.date}</p>
                 </div>

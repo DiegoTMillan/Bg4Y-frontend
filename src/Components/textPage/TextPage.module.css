@@ -1,0 +1,34 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+
+/* reboot css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  font-size: 0.785rem;
+}
+
+.container{
+    width:100%;
+    padding:2em 3.5em;
+    font-family: "Hind Madurai";
+}
+img{
+    width: 100%;
+    padding: 1em 0em;
+}
+h2 {
+    color: rgb(10, 10, 131);
+}
+h1{
+    padding:.5em 0em;
+}
+.bigText{
+    line-height: 2.5rem;
+    padding: 1em 0em;
+    font-size: 1.2rem;
+}
