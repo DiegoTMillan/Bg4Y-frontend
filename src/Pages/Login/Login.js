@@ -6,7 +6,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Components/AuthContext";
 import { useContext, useState } from "react";
 
-export const Login = (props) => {
+export const Login = () => {
   //navigate, usecontext and form tools
   const navigate = useNavigate();
   const { token, setToken } = useContext(AuthContext);
@@ -17,7 +17,7 @@ export const Login = (props) => {
   //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch("127.0.0.1:8000/login", {
+    fetch("http://127.0.0.1:8000/login", {
       method: "POST",
       body: JSON.stringify(formValues),
       headers: {
@@ -26,7 +26,8 @@ export const Login = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // setToken(data.token);
+        setToken(data.token);
+        console.log(data.token)
         navigate("/dashboard", { replace: true });
       });
   };
