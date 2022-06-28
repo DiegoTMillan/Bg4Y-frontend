@@ -1,11 +1,7 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 import classes from "./Home.module.css";
 import { News } from "../../Components/news/News";
-import { Review } from "../../Components/reviews/Review";
-import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthContext";
-import { useContext, useState } from "react";
+import { Review } from "../../Components/reviews/Review";;
 
 export const Home = () => {
   return (

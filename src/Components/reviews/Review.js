@@ -8,7 +8,7 @@ export const Review = (props) => {
         <Fragment>
             <div className={classes.container} >
                 <div>
-                <img className={classes.revImg} src={props.url}></img>
+                <img alt="not found, sorry" className={classes.revImg} src={props.url}></img>
                 <Link className={classes.link} to={props.link}>{props.text}</Link>
                 <p>{props.author} | {props.date}</p>
                 </div>

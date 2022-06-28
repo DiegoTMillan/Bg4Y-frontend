@@ -1,10 +1,6 @@
 //import components, tools, and css
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 import classes from "./Boardgames.module.css";
-import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthContext";
-import { useContext, useState, useEffect } from "react";
 
 export const Boardgames = () => {
   return (

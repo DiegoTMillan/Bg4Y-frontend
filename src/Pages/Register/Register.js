@@ -1,10 +1,8 @@
 //import components, tools, and css
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 import classes from "./Register.module.css";
-import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthContext";
-import { useContext, useState } from "react";
+import { useNavigate} from "react-router-dom";
+import { useState } from "react";
 
 export const Register = () => {
   const navigate = useNavigate();

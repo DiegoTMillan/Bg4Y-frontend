@@ -1,10 +1,5 @@
 //import components, tools, and css
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import classes from "./News.module.css";
-import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthContext";
-import { useContext, useState } from "react";
 import { TextPage } from "../../Components/textPage/TextPage";
 
 export const New2 = () => {
