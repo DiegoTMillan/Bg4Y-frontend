@@ -15,6 +15,7 @@
     width: 100vw;
     min-height: 70vh;
     font-family: "Hind Madurai";
+    padding:2em;
 }
 /* login card */
 .card1{
@@ -22,8 +23,6 @@
     align-items: center;
     flex-direction: column;
     margin: auto;
-    margin-top: 2em;
-    margin-bottom: 1em;
     padding: 1.5em;
     text-align: center;
     background-color: #faf9fe;

@@ -13,166 +13,178 @@
 }
 
 /* footer css */
-footer{
-    align-self: flex-end;
-    align-items: center;
-    justify-content: center;
-    background-color: #faf9fe;
-    width: 100%;
-    border-top: 3px solid grey;
+footer {
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf9fe;
+  width: 100%;
+  border-top: 3px solid grey;
 }
-.container{
-    width: 100%;
-    height: 100%;
+.container {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
-.mainFooter{
-    display: flex;
-    flex-direction: column;
+.mainFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #483d8b;
-    font-weight: bold;
-    font-family: "Lobster";
+.iconSocial {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
 }
-.iconDice{
-    font-size: 2rem;
-    padding: .2em;
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  color: #483d8b;
+  font-weight: bold;
+  font-family: "Lobster";
+  margin-right: 2em;
 }
-.socialMedia{
-    display: flex;
-    width: 30%;
-    justify-content: space-between;
-    margin: auto;
-    padding: .5em;
-    font-size: 1.3rem;
+.iconDice {
+  font-size: 3rem;
+  padding: 0.2em;
 }
-.fb{
-    color: #4267B2;
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.9rem;
+  margin-left:2em;
 }
-.insta{
-    color: #F56040;
+.fb {
+  color: #4267b2;
+  padding-bottom: 0.5em;
 }
-.linkedin{
-    color: #0e76a8;
+.insta {
+  color: #f56040;
+  padding-bottom: 0.5em;
 }
-.credits{
-    display: flex;
-    justify-content: center;
-    font-family: 'Hind Madurai';
+.linkedin {
+  color: #0e76a8;
+  padding-bottom: 0.5em;
 }
-.brush{
-    color:#483d8b;
-    padding: 0em .4em;
+.credits {
+  display: flex;
+  justify-content: center;
+  font-family: "Hind Madurai";
+  margin-bottom: 1em;
+  font-size:1.5rem
+}
+.brush {
+  color: #483d8b;
+  padding: 0em 0.4em;
 }
 
 /* items that do not appear in some breakpoints */
-.personalLink{
+.personalLink {
   text-decoration: none;
 }
-.asideFooter{
-    display: none;
+.asideFooter {
+  display: none;
 }
-.declaration{
-    display: none;
+.declaration {
+  display: none;
 }
 
 /* breakpoints  */
 
 /* 768px */
 @media (min-width: 768px) {
-    .container{
-        display: flex;
-    }
-    .mainFooter{
-        width: 50%;
-    }
-    .asideFooter{
-        display:inline-block;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-left: 1px solid grey;
-        width: 50%;
-    }
-    .group1{
-        display: flex;
-        flex-direction: column;
-        margin-right: .5em;
-    }
-    .group2{
-        display: flex;
-        flex-direction: column;
-        margin-left: .5em;
-    }
-    .group1 a{
-        text-decoration: none;
-        padding: .4em
-    }
-    .group2 a{
-        text-decoration: none;
-        padding: .4em
-    }
+  .container {
+    display: flex;
+  }
+  .mainFooter {
+    width: 50%;
+  }
+  .asideFooter {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid grey;
+    width: 50%;
+    font-size: 1.8em;
+  }
+  .group1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5em;
+  }
+  .group2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5em;
+  }
+  .group1 a {
+    text-decoration: none;
+    padding: 0.4em;
+  }
+  .group2 a {
+    text-decoration: none;
+    padding: 0.4em;
+  }
 }
 
 /* 992px */
-@media (min-width: 992px){
-    .socialMedia {
-        width: 50%;
-    }
-    .brush {
-        padding: 0em .8em
-    }
-    .group1 {
-        margin-right: 2em;
-    }
-    .group2 {
-        margin-right: 2em;
-    }
+@media (min-width: 992px) {
+  .brush {
+    padding: 0em 0.8em;
+  }
+  .group1 {
+    margin-right: 2em;
+  }
+  .group2 {
+    margin-right: 2em;
+  }
 }
 
 /* 1200px */
-@media (min-width:1200px) {
-    .mainFooter {
-        width: 33%;
-    }
-    .asideFooter{
-        width: 33%;
-        border-right: 1px solid grey;
-    }
-    .declaration{
-        display: inline-block;
-        width:33%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
-    }
-    .heartIcon {
-        color: red;
-        text-align: center;
-        padding: 1em;
-    }
-    .declaration p{
-        font-size: 1.1rem;
-        text-align: center;
-    }
-    /* added some scale transform for icons */
-    .socialMedia div:hover{
-        transform: scale(1.4);
-        transition:all .2s ease-in-out;
-    }
-    .personalLink:hover{
-        transform: scale(1.2);
-        transition:all .2s ease-in-out;
-    }
-    .asideFooter a:hover{
-        transform: scale(1.4);
-        transition:all .2s ease-in-out
-    }
+@media (min-width: 1200px) {
+  .mainFooter {
+    width: 33%;
+  }
+  .asideFooter {
+    width: 33%;
+    border-right: 1px solid grey;
+  }
+  .declaration {
+    display: inline-block;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size:1.6rem;
+  }
+  .heartIcon {
+    color: red;
+    text-align: center;
+    padding: 1em;
+  }
+  .declaration p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  /* added some scale transform for icons */
+  .socialMedia div:hover {
+    transform: scale(1.4);
+    transition: all 0.2s ease-in-out;
+  }
+  .personalLink:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+  }
+  .asideFooter a:hover {
+    transform: scale(1.4);
+    transition: all 0.2s ease-in-out;
+  }
 }
-

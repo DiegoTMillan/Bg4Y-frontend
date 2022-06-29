@@ -31,17 +31,20 @@ export const Boardgames = (props) => {
   return (
     <Fragment>
       <div className={classes.container}>
-        <h1>Boardgames database</h1>
+        <div className={classes.titles}>
+          <h1>Boardgames database</h1>
+          <h3>most shared board games</h3>
+        </div>
         <table>
           <thead>
             <tr>
               <th>name</th>
               <th>editorial</th>
               <th>author</th>
-              <th>number of players</th>
-              <th>average duration</th>
-              <th>minimum age recommended</th>
-              <th>expansions</th>
+              <th>num players</th>
+              <th>avg duration</th>
+              <th>min age</th>
+              <th>exps</th>
             </tr>
           </thead>
           <tbody>
@@ -49,37 +52,35 @@ export const Boardgames = (props) => {
             {bgDetails.map(game => {
               <Row details={game}/>
             })} */}
-            {gamesDetails.data.map(game => {
-              return(
+            {gamesDetails.data.map((game) => {
+              return (
                 <tr>
+                  <td>{game.name}</td>
+                  <td>{game.editorial}</td>
                   <td>
-                    {game.name}
-                  </td>
-                  <td>
-                    {game.editorial}
-                  </td>
-                  <td>
-                    {game.author[0]} <br/>  {game.author[1]} <br/> {game.author[2]}  
+                    {game.author[0]}<br/>{game.author[1]}<br/>{game.author[2]}
                   </td>
                   <td>
                     {game.numPlayers.min} - {game.numPlayers.max}
                   </td>
+                  <td>{game.avgMinDuration}</td>
+                  <td>{game.minAgeRecommended}</td>
                   <td>
-                    {game.avgMinDuration}
-                  </td>
-                  <td>
-                    {game.minAgeRecommended}
-                  </td>
-                  <td>
-                    {game.expansions[0]}<br/>
-                    {game.expansions[1]}<br/> 
-                    {game.expansions[2]}<br/>  
-                    {game.expansions[3]}<br/>  
-                    {game.expansions[4]}<br/>  
-                    {game.expansions[5]}<br/>  
+                    {game.expansions[0]}
+                    <br />
+                    {game.expansions[1]}
+                    <br />
+                    {game.expansions[2]}
+                    <br />
+                    {game.expansions[3]}
+                    <br />
+                    {game.expansions[4]}
+                    <br />
+                    {game.expansions[5]}
+                    <br />
                   </td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </table>
