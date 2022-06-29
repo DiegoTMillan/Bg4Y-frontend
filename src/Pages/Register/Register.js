@@ -1,8 +1,8 @@
 //import components, tools, and css
 import { Fragment } from "react";
 import classes from "./Register.module.css";
-import { useNavigate} from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -35,6 +35,18 @@ export const Register = () => {
         navigate("/dashboard", { replace: true });
       });
   };
+  // import for select
+  const [gamesDetails, setGamesDetails] = useState();
+
+  useEffect(() => {
+    //getting all games
+    fetch(`http://127.0.0.1:8000/boardgames/`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        return setGamesDetails(data);
+      });
+  }, []);
   return (
     <Fragment>
       <div className={classes.center}>
@@ -125,10 +137,27 @@ export const Register = () => {
                   onChange={handleInputChange}
                   value={formValues.district}
                 />
+                <label htmlFor="games">Select your games</label>
+                <select
+                  id="games"
+                  className={classes.input8}
+                  type="select"
+                  multiple
+                  name="select"
+                  placeholder="Select a file"
+                  onChange={handleInputChange}
+                  value={formValues.games}
+                >
+                  {gamesDetails.data.map((game, i) => {
+                    return (
+                    <option key={i} value={game.name}>{game.name}</option>
+                    )
+                  })}
+                </select>
                 <label htmlFor="photo">Select a photo</label>
                 <input
                   id="photo"
-                  className={classes.input8}
+                  className={classes.input9}
                   type="file"
                   name="photo"
                   placeholder="Select a file"

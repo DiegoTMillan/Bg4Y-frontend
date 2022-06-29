@@ -41,6 +41,7 @@ thead th {
 th, td{
     text-align: center;
     vertical-align: center;
+    font-size: .8rem;
 }
 /* td{
     display: flex;

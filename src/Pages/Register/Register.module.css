@@ -73,6 +73,12 @@ input{
     padding: 12px 25px;
     border-radius: 5px,
 }
+select{
+    text-align: center;
+    font-family: "Hind Madurai";
+    padding: .25em;
+    font-size: 1.5rem;
+}
 
 .rules p{
     padding: 1em;

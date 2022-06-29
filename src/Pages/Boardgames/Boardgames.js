@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import classes from "./Boardgames.module.css";
 import { Spinner } from "../../Components/spinner/Spinner";
 import { useState, useEffect } from "react";
-// import { Row } from "../../Components/row/row";
+import { Row } from "../../Components/row/row";
 
 export const Boardgames = (props) => {
   // save data about boardgames
@@ -48,40 +48,18 @@ export const Boardgames = (props) => {
             </tr>
           </thead>
           <tbody>
-            {/* TODO add new file component
-            {bgDetails.map(game => {
-              <Row details={game}/>
-            })} */}
-            {gamesDetails.data.map((game) => {
-              return (
-                <tr>
-                  <td>{game.name}</td>
-                  <td>{game.editorial}</td>
-                  <td>
-                    {game.author[0]}<br/>{game.author[1]}<br/>{game.author[2]}
-                  </td>
-                  <td>
-                    {game.numPlayers.min} - {game.numPlayers.max}
-                  </td>
-                  <td>{game.avgMinDuration}</td>
-                  <td>{game.minAgeRecommended}</td>
-                  <td>
-                    {game.expansions[0]}
-                    <br />
-                    {game.expansions[1]}
-                    <br />
-                    {game.expansions[2]}
-                    <br />
-                    {game.expansions[3]}
-                    <br />
-                    {game.expansions[4]}
-                    <br />
-                    {game.expansions[5]}
-                    <br />
-                  </td>
-                </tr>
-              );
-            })}
+            {gamesDetails.data.map((games) => (
+              <Row
+                key={gamesDetails.name}
+                name={games.name}
+                editorial={games.editorial}
+                author={`${games.author}`}
+                numPlayers={`${games.numPlayers.min} - ${games.numPlayers.max}`}
+                avgDuration={games.avgMinDuration}
+                minAge={games.minAgeRecommended}
+                expansions={`${games.expansions}`}
+              />
+            ))}
           </tbody>
         </table>
       </div>
