@@ -1,10 +1,10 @@
-//import components, tools, and css
 import { Fragment } from "react";
-import classes from "./Register.module.css";
+import  classes  from "./Update.module.css";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Spinner } from "../../Components/spinner/Spinner";
 
-export const Register = () => {
+export const Update = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     first_name: "",
@@ -23,8 +23,8 @@ export const Register = () => {
   //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch("127.0.0.1:8000/users", {
-      method: "POST",
+    fetch("http://127.0.0.1:8000/users", {
+      method: "PATCH",
       body: JSON.stringify(formValues),
       headers: {
         "Content-Type": "application/json",
@@ -35,18 +35,27 @@ export const Register = () => {
         navigate("/dashboard", { replace: true });
       });
   };
-  // import for select
-  const [gamesDetails, setGamesDetails] = useState();
+
+  //getting info about user
+  const [profileDetails, setProfileDetails] = useState();
 
   useEffect(() => {
-    //getting all games
-    fetch(`http://127.0.0.1:8000/boardgames/`)
+    //getting all details
+    fetch(`http://127.0.0.1:8000/users/62b1ef42ab8614a1c0db096e`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        return setGamesDetails(data);
+        return setProfileDetails(data);
       });
   }, []);
+
+  if (!profileDetails) {
+    return (
+      <div className={classes.spinner}>
+        <Spinner />
+      </div>
+    );
+  }
   return (
     <Fragment>
       <div className={classes.center}>
@@ -64,7 +73,7 @@ export const Register = () => {
                   type="text"
                   name="first_name"
                   value={formValues.first_name}
-                  placeholder="First Name"
+                  placeholder={profileDetails.data.first_name}
                   required
                   onChange={handleInputChange}
                 />
@@ -75,18 +84,7 @@ export const Register = () => {
                   type="text"
                   name="last_name"
                   value={formValues.last_name}
-                  placeholder="Last Name"
-                  required
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="email">Write a valid email</label>
-                <input
-                  id="email"
-                  className={classes.input3}
-                  type="email"
-                  name="email"
-                  value={formValues.email}
-                  placeholder="Email"
+                  placeholder={profileDetails.data.last_name}
                   required
                   onChange={handleInputChange}
                 />
@@ -96,7 +94,7 @@ export const Register = () => {
                   className={classes.input4}
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="New password"
                   required
                   onChange={handleInputChange}
                   value={formValues.password}
@@ -109,7 +107,7 @@ export const Register = () => {
                   className={classes.input5}
                   type="text"
                   name="phone"
-                  placeholder="Phone"
+                  placeholder={profileDetails.data.phone}
                   onChange={handleInputChange}
                   value={formValues.phone}
                 />
@@ -119,7 +117,7 @@ export const Register = () => {
                   className={classes.input6}
                   type="text"
                   name="city"
-                  placeholder="City Name"
+                  placeholder={profileDetails.data.city}
                   required
                   onChange={handleInputChange}
                   value={formValues.city}
@@ -132,7 +130,7 @@ export const Register = () => {
                   className={classes.input7}
                   type="text"
                   name="district"
-                  placeholder="District Name"
+                  placeholder={profileDetails.data.district}
                   required
                   onChange={handleInputChange}
                   value={formValues.district}
@@ -144,15 +142,15 @@ export const Register = () => {
                   type="select"
                   multiple
                   name="game_name"
-                  placeholder="Select a file"
+                  placeholder="Select your games"
                   onChange={handleInputChange}
                   value={formValues.games}
                 >
-                  {gamesDetails.data.map((game, i) => {
-                    return (
-                    <option key={i} value={game.name}>{game.name}</option>
-                    )
-                  })}
+                  {/* {gamesDetails.data.map((game, i) => { */}
+                     {/* return (
+                     <option key={i} value={game.name}>{game.name}</option>
+                     )
+                  })} */}
                 </select>
                 <label htmlFor="photo">Select a photo</label>
                 <input
@@ -167,7 +165,7 @@ export const Register = () => {
               </div>
             </div>
             <div className={classes.button}>
-              <button type="submit">Sign Up</button>
+              <button type="submit">Update</button>
             </div>
           </form>
         </div>

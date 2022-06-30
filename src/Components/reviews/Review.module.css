@@ -67,10 +67,10 @@
 @media (min-width:1200px) {
     .container{
         width: 100%;
-        padding: 1.5em 3em 1em 0em;
+        padding: 1.5em 3em 1em .5em;
     }
     .container div{
-        padding:0em;
+        padding:0.5em;
     }
     .revImg{
         height: 30em;

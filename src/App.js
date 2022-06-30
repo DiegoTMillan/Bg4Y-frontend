@@ -11,6 +11,7 @@ import {New3} from "./Pages/News/New3"
 import {Review1} from "./Pages/Reviews/Review1"
 import {Review2} from "./Pages/Reviews/Review2"
 import {Review3} from "./Pages/Reviews/Review3"
+import {Update} from "./Pages/Update-profile/Update"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/review1" element={<Review1/>}/>
       <Route path="/review2" element={<Review2/>}/>
       <Route path="/review3" element={<Review3/>}/>
+      <Route path="/update-profile" element={<Update/>}/>
       <Route path="/404" element={<NotFound/>}/>
       <Route path="*" element={<Navigate to="404" replace />}/>
     </Routes>
