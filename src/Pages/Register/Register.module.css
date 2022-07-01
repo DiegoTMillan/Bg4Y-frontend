@@ -1,6 +1,5 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
 /* reboot css */
 * {
     box-sizing: border-box;
@@ -14,7 +13,7 @@
 .center{
     width: 100vw;
     min-height: 75vh;
-    font-family: "Hind Madurai";
+    font-family: "Raleway";
     padding:2em;
 }
 /* login card */
@@ -26,7 +25,6 @@
     padding: 1.5em;
     text-align: center;
     background-color: #faf9fe;
-    border: solid 3px grey;
     border-radius: 5px;
     box-shadow: 3px 3px 5px grey;
 }

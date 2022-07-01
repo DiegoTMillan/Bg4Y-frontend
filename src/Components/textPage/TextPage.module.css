@@ -1,5 +1,5 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
 
 /* reboot css */
 * {
@@ -15,7 +15,7 @@
 .container{
     width:100%;
     padding:2em 3.5em;
-    font-family: "Hind Madurai";
+    font-family: "Raleway";
 }
 img{
     width: 100%;

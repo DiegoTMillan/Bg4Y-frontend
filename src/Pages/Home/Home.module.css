@@ -1,6 +1,5 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
-* {
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@
   font-size: 0.785rem;
 }
 .center{
-    font-family: "Hind Madurai";
+    font-family: "Raleway";
 }
 .titles{
     display:none;

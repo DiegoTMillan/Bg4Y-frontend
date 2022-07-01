@@ -1,5 +1,5 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
 
 /* reboot css */
 * {
@@ -19,7 +19,7 @@ footer {
   justify-content: center;
   background-color: #faf9fe;
   width: 100%;
-  border-top: 3px solid grey;
+  box-shadow: 0 -2px 7px 2px rgb(200, 196, 196);
 }
 .container {
   width: 100%;
@@ -27,6 +27,7 @@ footer {
   display:flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Raleway';
 }
 .mainFooter {
   display: flex;

@@ -48,18 +48,21 @@ export const Boardgames = (props) => {
             </tr>
           </thead>
           <tbody>
-            {gamesDetails.data.map((games) => (
-              <Row
-                key={gamesDetails.name}
-                name={games.name}
-                editorial={games.editorial}
-                author={`${games.author}`}
-                numPlayers={`${games.numPlayers.min} - ${games.numPlayers.max}`}
-                avgDuration={games.avgMinDuration}
-                minAge={games.minAgeRecommended}
-                expansions={`${games.expansions}`}
-              />
-            ))}
+            {gamesDetails.data.map((game, index) => {
+              console.log(game.expansions.toString().split(","));
+              return (
+                <Row
+                  key={index}
+                  name={game.name}
+                  editorial={game.editorial}
+                  author={game.author.join(", ")}
+                  numPlayers={`${game.numPlayers.min} - ${game.numPlayers.max}`}
+                  avgDuration={game.avgMinDuration}
+                  minAge={game.minAgeRecommended}
+                  expansions={game.expansions.join(", ")}
+                />
+              );
+            })}
           </tbody>
         </table>
       </div>

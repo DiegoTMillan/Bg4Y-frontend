@@ -62,7 +62,7 @@ export const Update = () => {
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
           <h1>Bg4U</h1>
-          <h2>Sign up here</h2>
+          <h2>Update your profile here</h2>
           <form onSubmit={handleOnSubmit}>
             <div className={classes.columns}>
               <div className={classes.column1}>

@@ -1,5 +1,5 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,8 +17,8 @@
   justify-content: space-around;
   background-color: #faf9fe;
   padding: 1em;
-  border-bottom: 3px solid grey;
-  font-family: "Hind Madurai";
+  box-shadow: 0 2px 7px 2px rgb(200, 196, 196);
+  font-family: "Raleway";
 }
 .iconDice {
   font-size: 4rem;
@@ -52,6 +52,7 @@
   background-color: #483d8b;
   padding: 1em;
   border-bottom: 3px solid grey;
+  border-top: 3px solid grey;
 }
 .optionalNav a {
   text-decoration: none;

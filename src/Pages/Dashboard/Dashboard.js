@@ -9,21 +9,21 @@ import { AuthContext } from "../../Components/AuthContext";
 import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
-  // const {token, setToken} = useContext(AuthContext);
-  // if (!token) return <Navigate to="/login" replace/>;
   // import for select
   const [profileDetails, setProfileDetails] = useState();
-
+  
   useEffect(() => {
-    //getting all games
+    //getting all classes
     fetch(`http://127.0.0.1:8000/users/62b1ef42ab8614a1c0db096e`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        return setProfileDetails(data);
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      return setProfileDetails(data);
+    });
   }, []);
-
+  
+  // const {token, setToken} = useContext(AuthContext);
+  // if (!token) return <Navigate to="/login" replace/>;
   if (!profileDetails) {
     return (
       <div className={classes.spinner}>
@@ -73,8 +73,8 @@ export const Dashboard = () => {
             </div>
           </div>
           <div className={classes.games}>
-            <i class="fa-solid fa-dice-six"></i>
-            <p>{profileDetails.data.game_name}</p>
+            <i className="fa-solid fa-dice-six"></i>
+            <p>{profileDetails.data.game_name.join("/ ")}</p>
           </div>
           <div className={classes.buttons}>
             <div className={classes.link}>

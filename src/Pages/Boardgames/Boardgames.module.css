@@ -1,5 +1,5 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
 
 /* reboot css */
 * {
@@ -16,8 +16,8 @@
 }
 .container{
     max-width: 100%;
-    padding:.2em;
-    font-family: "Hind Madurai";
+    padding:.2em .2em 2em .2em;
+    font-family: "Raleway";
 }
 .titles{
     display:flex;
@@ -30,15 +30,15 @@
 }
 table{
     width:100%;
-    border:2px solid grey;
-    border-radius: 5px;
     border-collapse: collapse;
+    box-shadow: 3px 3px 5px grey;
 }
 thead th {
     background-color:  #483D8B;
     color:white;
 }
 th, td{
+    padding:.5em 0em;
     text-align: center;
     vertical-align: center;
     font-size: .8rem;
