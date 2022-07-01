@@ -3,6 +3,7 @@ import classes from "./Header.module.css";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
+  let isLogged = false;
   return (
     <header>
       <div className={classes.container}>
@@ -17,7 +18,29 @@ export const Header = () => {
           <Link to="/boardgames">Boardgames</Link>
           <Link to="/dashboard">Profile</Link>
         </div>
-        <div
+        {isLogged && (
+          <div
+            // login button
+            className={classes.loginNav}
+            onClick={(event) => (window.location.href = "/login")}
+          >
+            <i
+              className={`${classes.loginIcon} fa-solid fa-right-from-bracket`}
+            ></i>
+          </div>
+        )}
+        {!isLogged && (
+          <div
+            // login button
+            className={classes.loginNav}
+            onClick={(event) => (window.location.href = "/login")}
+          >
+            <i
+              className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
+            ></i>
+          </div>
+        )}
+        {/* <div
           // login button
           className={classes.loginNav}
           onClick={(event) => (window.location.href = "/login")}
@@ -25,7 +48,7 @@ export const Header = () => {
           <i
             className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
           ></i>
-        </div>
+        </div> */}
       </div>
       {/* this navigation menu only appears under 565px */}
       <div className={classes.optionalNav}>
