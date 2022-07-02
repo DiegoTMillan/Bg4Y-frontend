@@ -49,21 +49,12 @@ export const Login = (props) => {
     });
     const handleSubmit = (event) => {
       event.preventDefault();
-      if (props.action === "Register") {
-        dispatch(addNewUser(data)).then(() => {
-          setData({
-            email: "",
-            password: "",
-          });
-        });
-      } else {
         dispatch(signIn(data)).then(() => {
           setData({
             email: "",
             password: "",
           });
         });
-      }
     };
   
     const handleChange = (event) => {
@@ -76,17 +67,6 @@ export const Login = (props) => {
 
   return (
       <div className={classes.center}>
-        {loading && <Spinner />}
-      {status === "succeeded" &&
-        user.status === "failed" &&
-        props.type === "Register" && (
-          <Alert type="error" message={user.error} />
-        )}
-      {status === "succeeded" &&
-        user.status === "succeeded" &&
-        props.type === "Register" && (
-          <Alert type="success" message={user.data.info} />
-        )}
         {!loading && (
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>

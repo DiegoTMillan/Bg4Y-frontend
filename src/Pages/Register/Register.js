@@ -1,11 +1,10 @@
 //import components, tools, and css
-import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewUser, signIn} from "../../Components/store/loginSlice";
+import { addNewUser} from "../../Components/store/loginSlice";
 import { Spinner } from "../../Components/spinner/Spinner";
 import {Alert} from "../../Components/alert/Alert"
 import classes from "./Register.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export const Register = (props) => {
@@ -57,7 +56,7 @@ export const Register = (props) => {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (props.action === "Register") {
+    // if (props.action === "Register") {
       dispatch(addNewUser(data)).then(() => {
         setData({
           first_name: "",
@@ -71,14 +70,7 @@ export const Register = (props) => {
           photo: "",
         });
       });
-    } else {
-      dispatch(signIn(data)).then(() => {
-        setData({
-          email: "",
-          password: "",
-        });
-      });
-    }
+    // }
   };
 
   const handleChange = (event) => {
@@ -105,14 +97,15 @@ export const Register = (props) => {
     <div className={classes.center}>
       {loading && <Spinner />}
       {status === "succeeded" &&
-        user.status === "failed" &&
-        props.type === "Register" && (
-          <Alert type="error" message={user.error} />
+        user.status === "failed" && (
+        // props.type === "Register" && (
+          <Alert type="error" message="Sorry, something wrong has happened, please try again in a few minutes" />
         )}
       {status === "succeeded" &&
-        user.status === "succeeded" &&
-        props.type === "Register" && (
-          <Alert type="success" message={user.data.info} />
+        user.status === "succeeded" && (
+        // props.type === "Register" && (
+          <Alert type="success" message="You have successfully registered. Now yo can login and enjoy!" />
+          // <Navigate to="/dashboard" replace />
         )}
       {!loading && (
         <div className={classes.card1}>

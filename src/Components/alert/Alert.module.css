@@ -1,9 +1,10 @@
 .alert {
-    width: 60%;
-    font-size: 1.4rem;
+    width: 100%;
+    font-size: 1.6rem;
   }
   .alert .inner {
     font-family: Fredoka;
+    text-align: center;
     display: block;
     margin: 0.8em auto;
     padding: 0.8em;

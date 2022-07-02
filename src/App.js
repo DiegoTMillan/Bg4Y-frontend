@@ -12,6 +12,7 @@ import {Review1} from "./Pages/Reviews/Review1"
 import {Review2} from "./Pages/Reviews/Review2"
 import {Review3} from "./Pages/Reviews/Review3"
 import {Update} from "./Pages/Update-profile/Update"
+import {Users} from "./Pages/Users/Users"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path="/review2" element={<Review2/>}/>
       <Route path="/review3" element={<Review3/>}/>
       <Route path="/update-profile" element={<Update/>}/>
+      <Route path="/users" element={<Users/>}/>
       <Route path="/404" element={<NotFound/>}/>
       <Route path="*" element={<Navigate to="404" replace />}/>
     </Routes>

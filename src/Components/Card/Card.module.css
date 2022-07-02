@@ -1,0 +1,182 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap");
+/* reboot css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  font-size: 0.785rem;
+}
+
+.container {
+  width: 100vw;
+  min-height: 75vh;
+  font-family: "Raleway";
+  padding: 2em;
+}
+/* login card */
+.card1 {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 0.3em;
+  text-align: center;
+  background-color: #faf9fe;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px grey;
+}
+.logo {
+  padding-top: 1em;
+}
+.card1 .iconDice {
+  text-align: center;
+  font-size: 3.5em;
+  color: #483d8b;
+}
+.card1 h1 {
+  font-family: "Lobster";
+  text-align: center;
+  color: #483d8b;
+}
+.photo {
+  width: 40%;
+  margin: auto;
+}
+.img {
+  width: 10em;
+  height: 13em;
+  border-radius: 50%;
+}
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1em;
+}
+.column1 {
+  display: flex;
+  flex-direction: column;
+}
+.column1 div {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+.column1 div i {
+  color: darkred;
+  font-size: 1.8rem;
+  margin-bottom: .5em;
+}
+.column1 div p {
+  font-size: 1.5rem;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+}
+.column2 div {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+.column2 div i {
+  color: darkred;
+  font-size: 1.8rem;
+  margin-bottom: .5em;
+}
+.column2 div p {
+  font-size: 1.5rem;
+}
+.games {
+  width: 75%;
+  margin: auto;
+  padding-bottom: 2em;
+  border-bottom: 1px solid grey;
+}
+.games i {
+  color: darkred;
+  font-size: 1.8rem;
+  padding-bottom: 0.5em;
+}
+.games p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #483d8b;
+}
+.buttons {
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+}
+.buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0.5em;
+  padding: 10px 5px;
+  border-radius: 6px;
+  background-color: #483d8b;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.linkText {
+  text-decoration: none;
+  color: white;
+}
+
+/* .button button{
+    margin-top: 0.5em;
+    width: 90%;
+    padding: 8px 4px;
+    border-radius: 5px;
+    background-color: #483D8B;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+    border: 0;
+} */
+
+/* breakpoints */
+@media (min-width: 565px) {
+  .img {
+    height: 20em;
+    width: 17em;
+  }
+}
+@media (min-width: 768px) {
+  .card1 {
+    max-width: 80%;
+  }
+  .column1 {
+    margin-right: 0.5em;
+  }
+  .column2 {
+    margin-left: 0.5em;
+  }
+  .img {
+    height: 21em;
+    width: 19em;
+  }
+}
+@media (min-width: 992px) {
+  .card1 {
+    max-width: 65%;
+  }
+  .buttons button {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .card1 {
+    max-width: 60%;
+  }
+  button:hover {
+    transform: scale(1.4);
+    transition: all 0.2s ease-in-out;
+  }
+}
