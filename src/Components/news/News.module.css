@@ -17,6 +17,7 @@
     align-items: center;
     padding: 1.5em;
     font-family: "Raleway";
+    opacity: .9;
 }
 .container div {
     border-top: 1px solid grey;
@@ -36,6 +37,7 @@
     text-decoration: None;
     color: rgb(10, 10, 131);
     font-size: 3.5rem;
+    width: 100%;
 }
 .container p {
     padding: 1em 0em;

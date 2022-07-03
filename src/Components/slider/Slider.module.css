@@ -1,0 +1,120 @@
+.sliderContainer{
+    margin: 0 auto;
+    overflow-x:hidden;
+    
+}
+.slider{
+    display: flex;
+    cursor: grab;
+    
+}
+.item{
+    height: 10rem;
+    width: 50rem;
+    padding: 1rem;
+    border-collapse: collapse;
+}
+.item img{
+    height: 10em;
+    width: 15em;
+    pointer-events: none;
+}
+
+/* breakpoints */
+
+@media (max-width: 565px){
+    .sliderContainer2{
+        display: none;
+    }
+    .sliderContainer3{
+        display: none;
+    }
+    .sliderContainer4{
+        display: none;
+    }
+}
+@media (min-width: 565px){
+    .sliderContainer2{
+        display: none;
+    }
+    .sliderContainer3{
+        display: none;
+    }
+    .sliderContainer4{
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .sliderContainer{
+        display: none;
+    }
+    .sliderContainer2{
+        display:contents;
+    }
+    .sliderContainer3{
+        display: none;
+    }
+    .sliderContainer4{
+        display: none;
+    }
+    .item{
+        height: 17rem;
+        width: 50rem;
+        padding: 1rem;
+        border-collapse: collapse;
+    }
+    .item img{
+        height: 15em;
+        width: 20em;
+        pointer-events: none;
+    }
+}
+@media (min-width: 992px){
+    .sliderContainer{
+        display: none;
+    }
+    .sliderContainer2{
+        display:none;
+    }
+    .sliderContainer3{
+        display: contents;
+    }
+    .sliderContainer4{
+        display: none;
+    }
+    .item{
+        height: 17rem;
+        width: 40rem;
+        padding: 1rem;
+        border-collapse: collapse;
+    }
+    .item img{
+        height: 15em;
+        width: 20em;
+        pointer-events: none;
+    }
+}@media (min-width: 1200px){
+    .sliderContainer{
+        display: none;
+    }
+    .sliderContainer2{
+        display:none;
+    }
+    .sliderContainer3{
+        display: none;
+    }
+    .sliderContainer4{
+        display: contents;
+    }
+    .item{
+        height: 25rem;
+        width: 40rem;
+        padding: 1rem;
+        border-collapse: collapse;
+    }
+    .item img{
+        height: 20em;
+        width: 25em;
+        pointer-events: none;
+    }
+}

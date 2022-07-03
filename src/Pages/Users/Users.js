@@ -28,17 +28,19 @@ export const Users = () => {
       <h1 className={classes.titles}>Users</h1>
       {usersDetails.data.map((user, index) => {
         return (
-          <Card
-            key={index}
-            photo={user.photo}
-            first_name={user.first_name}
-            last_name={user.last_name}
-            email={user.email}
-            phone={user.phone}
-            city={user.city}
-            district={user.district}
-            game_name={user.game_name.join(", ")}
-          />
+          <div className={classes.container}>
+            <Card
+              key={index}
+              photo={user.photo}
+              first_name={user.first_name}
+              last_name={user.last_name}
+              email={user.email}
+              phone={user.phone}
+              city={user.city}
+              district={user.district}
+              game_name={user.game_name.join(", ")}
+            />
+          </div>
         );
       })}
     </Fragment>

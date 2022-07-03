@@ -13,9 +13,11 @@
 .container{
     width: 97%;
     margin: auto;
+    margin-top:1em;
     align-items: center;
     padding: 1.5em;
     font-family: "Raleway";
+    opacity: .9;
 }
 .container div {
     border-top: 1px solid grey;

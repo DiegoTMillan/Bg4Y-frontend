@@ -15,9 +15,10 @@
     height: 100vh;
 }
 .container{
-    max-width: 100%;
-    padding:.2em .2em 2em .2em;
-    font-family: "Raleway";
+        width: 100vw;
+        min-height: 75vh;
+        font-family: "Raleway";
+        padding: 2em;
 }
 .titles{
     display:flex;

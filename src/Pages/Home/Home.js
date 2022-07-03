@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import classes from "./Home.module.css";
 import { News } from "../../Components/news/News";
-import { Review } from "../../Components/reviews/Review";;
+import { Review } from "../../Components/reviews/Review";
+import Slider from "../../Components/slider/Slider";
 
 export const Home = () => {
   return (
@@ -12,7 +13,10 @@ export const Home = () => {
       </div>
       <div className={classes.center}>
         <div className={classes.news}>
-          <h1 className={classes.newsTitle}>News</h1>
+          <div className={classes.divTitle}>
+            <h1 className={classes.newsTitle}>News</h1>
+          </div>
+          
           <News
             url="https://images.pexels.com/photos/8111367/pexels-photo-8111367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             text="All the latest news about Essen 2022"
@@ -36,7 +40,9 @@ export const Home = () => {
           />
         </div>
         <div className={classes.reviews}>
-          <h1 className={classes.reviewsTitle}>Reviews</h1>
+          <div className={classes.divReview}>
+            <h1 className={classes.reviewsTitle}>Reviews</h1>
+          </div>
           <Review
             url="https://ksr-ugc.imgix.net/assets/024/933/912/046573ee55d8eeaae3c33f9660149d28_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1556465339&auto=format&frame=1&q=92&s=9b6bb3518eeb1b8d7f9b58b89a967646"
             text="On Mars, a deep review about Vital Lacerda's last game"
