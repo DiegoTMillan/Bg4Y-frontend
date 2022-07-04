@@ -146,9 +146,9 @@
   }
 }
 @media (min-width: 768px) {
-  .card1 {
+  /* .card1 {
     max-width: 80%;
-  }
+  } */
   .column1 {
     margin-right: 0.5em;
   }
@@ -161,9 +161,9 @@
   }
 }
 @media (min-width: 992px) {
-  .card1 {
+  /* .card1 {
     max-width: 60%;
-  }
+  } */
   .columns{
     flex-direction: row;
   }
@@ -173,7 +173,14 @@
 }
 @media (min-width: 1200px) {
   .card1 {
-    max-width: 60%;
+    max-width:100%;
+    min-height:77em;
+  }
+  .columns{
+    padding:0em;
+    flex-direction: column;
+  }
+  .column1 div {
   }
   button:hover {
     transform: scale(1.4);

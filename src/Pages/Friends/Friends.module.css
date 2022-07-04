@@ -14,14 +14,13 @@
 .spinner{
     height: 100vh;
 }
-
 .container{
         width: 100vw;
         min-height: 75vh;
         font-family: "Raleway";
         padding: 2em;
 }
-.titles{
+.friends{
     display:flex;
     justify-content: center;
     text-align: center;
@@ -29,31 +28,23 @@
     padding-top: 1em;
     color: #483D8B;
 }
+.buttons {
+    display: none;
+}
 @media (min-width: 768px) {
-    .titles {
+    .friends {
         font-size: 3rem;
         padding-top: 0em
 
     }
     @media (min-width: 992px){
-        .titles {
+        .friends {
             font-size: 3.5rem;
         }
     }
     @media (min-width: 1200px){
-        .titles{
+        .friends{
             padding-top: 0em;
-        }
-    }
-    @media (min-width: 1200px) {
-        .bigContainer{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        .container{
-            max-width: 30%;
         }
     }
 }

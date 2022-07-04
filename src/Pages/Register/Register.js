@@ -36,6 +36,7 @@ export const Register = (props) => {;
           district: "",
           role: "user",
           photo: "",
+          game_name:[],
         });
       });
     // }
@@ -48,6 +49,7 @@ export const Register = (props) => {;
       [name]: value,
     });
   };
+
   return (
     <div className={classes.center}>
       {loading && <Spinner />}
@@ -157,10 +159,22 @@ export const Register = (props) => {;
                   type="select"
                   multiple
                   name="game_name"
-                  placeholder="Select a file"
+                  placeholder="Select your games"
                   onChange={handleChange}
                   value={data.games}
                 >
+                  <option value="Maracaibo">Maracaibo</option>
+                  <option value="Settlers of Catan">Settlers of Catan</option>
+                  <option value="Through the ages">Through the ages</option>
+                  <option value="Clash of cultures">Clash of cultures</option>
+                  <option value="Agricola">Agricola</option>
+                  <option value="K2">K2</option>
+                  <option value="7Wonders">7Wonders</option>
+                  <option value="Dead of winter">Dead of winter</option>
+                  <option value="Scythe">Scythe</option>
+                  <option value="Secret code">Secret code</option>
+                  <option value="Civilization">Civilization</option>
+                  <option value="Junta">Junta</option>
                   {/* {gamesDetails.data.map((game, i) => {
                     return (
                       <option key={i} value={game.name}>
@@ -169,13 +183,13 @@ export const Register = (props) => {;
                     );
                   })} */}
                 </select>
-                <label htmlFor="photo">Select a photo</label>
+                <label htmlFor="photo">Select a photo URL</label>
                 <input
                   id="photo"
                   className={classes.input9}
-                  type="file"
+                  type="text"
                   name="photo"
-                  placeholder="Select a file"
+                  placeholder="URL"
                   onChange={handleChange}
                   value={data.photo}
                 />

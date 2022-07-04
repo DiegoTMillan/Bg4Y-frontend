@@ -17,12 +17,12 @@ export const Dashboard = () => {
   };
   return (
     <div className={classes.container}>
-      {loading && 
+      {loading && (
         <div className={classes.spinner}>
           <Spinner />
         </div>
-      }
-     {!loading &&  
+      )}
+      {!loading && (
         <div className={classes.card1}>
           <div className={classes.icons}>
             <div className={classes.logo}>
@@ -30,12 +30,11 @@ export const Dashboard = () => {
               <h1>Bg4U</h1>
             </div>
             {user.role === "admin" && (
-              <div
-                className={` ${classes.modLogo}`}
-                onClick={(event) => (window.location.href = "/users")}
-              >
+              <div className={` ${classes.modLogo}`}>
+                <Link className={classes.linkText1} to={"/users"}>
                 <i className={`${classes.iconTools} fa-solid fa-toolbox`}></i>
                 <h1>ADMIN</h1>
+                </Link>
               </div>
             )}
           </div>
@@ -65,8 +64,7 @@ export const Dashboard = () => {
               </div>
               <div className={classes.column2}>
                 <div className={classes.city}>
-                  <i className={"fa-solid fa-city"}></i>{" "}
-                  <p>{user.city}</p>
+                  <i className={"fa-solid fa-city"}></i> <p>{user.city}</p>
                 </div>
                 <div className={classes.district}>
                   <i className={"fa-solid fa-earth-oceania"}></i>
@@ -86,17 +84,22 @@ export const Dashboard = () => {
               </Link>
             </div>
             <div className={classes.link}>
-              <Link className={classes.linkText} to={"/update-profile"}>
+              <Link className={classes.linkText} to={"/friends"}>
                 Look for friends
               </Link>
             </div>
             <div className={classes.link}>
-              <Link className={classes.linkText} onClick={handleLogOut} to={"/login"}>
+              <Link
+                className={classes.linkText}
+                onClick={handleLogOut}
+                to={"/login"}
+              >
                 Logout
               </Link>
             </div>
           </div>
-        </div>}
-      </div>
+        </div>
+      )}
+    </div>
   );
 };

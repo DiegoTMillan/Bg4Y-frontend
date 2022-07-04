@@ -1,10 +1,11 @@
 import { useState, useEffect, Fragment } from "react";
 import { Spinner } from "../../Components/spinner/Spinner";
-import { Card } from "../../Components/Card/Card";
-import classes from "./Users.module.css";
+import { CardFriend } from "../../Components/CardFriend/CardFriend";
+import classes from "./Friends.module.css";
 
-export const Users = () => {
+export const Friends = () => {
   // const user = useSelector((state) => state.login.login.data.data.info[0]);
+//   db.users.find({"game_name":{$in:["Maracaibo", "K2"]}}, {"first_name":1, "last_name":1, "phone":1, "city":1, "district":1, "game_name":1, "photo":1, "_id":0})
   const [usersDetails, setUsersDetails] = useState();
 
   useEffect(() => {
@@ -26,12 +27,11 @@ export const Users = () => {
   }
   return (
     <Fragment>
-      <h1 className={classes.titles}>Users</h1>
-      <div className={classes.bigContainer}>
+      <h1 className={classes.friends}>Contact Friends</h1>
       {usersDetails.data.map((user, index) => {
         return (
           <div className={classes.container}>
-            <Card
+            <CardFriend
               key={index}
               photo={user.photo}
               first_name={user.first_name}
@@ -43,10 +43,8 @@ export const Users = () => {
               game_name={user.game_name.join(", ")}
             />
           </div>
-          
         );
       })}
-      </div>
     </Fragment>
   );
 };

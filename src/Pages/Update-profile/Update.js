@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import  classes  from "./Update.module.css";
+import classes from "./Update.module.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from "../../Components/spinner/Spinner";
@@ -99,8 +99,6 @@ export const Update = () => {
                   onChange={handleInputChange}
                   value={formValues.password}
                 />
-              </div>
-              <div className={classes.column2}>
                 <label htmlFor="phone">Write your phone</label>
                 <input
                   id="phone"
@@ -111,6 +109,8 @@ export const Update = () => {
                   onChange={handleInputChange}
                   value={formValues.phone}
                 />
+              </div>
+              <div className={classes.column2}>
                 <label htmlFor="city">Write the name of your city</label>
                 <input
                   id="city"
@@ -146,8 +146,20 @@ export const Update = () => {
                   onChange={handleInputChange}
                   value={formValues.games}
                 >
+                  <option value="Maracaibo">Maracaibo</option>
+                  <option value="Settlers of Catan">Settlers of Catan</option>
+                  <option value="Through the ages">Through the ages</option>
+                  <option value="Clash of cultures">Clash of cultures</option>
+                  <option value="Agricola">Agricola</option>
+                  <option value="K2">K2</option>
+                  <option value="7Wonders">7Wonders</option>
+                  <option value="Dead of winter">Dead of winter</option>
+                  <option value="Scythe">Scythe</option>
+                  <option value="Secret code">Secret code</option>
+                  <option value="Civilization">Civilization</option>
+                  <option value="Junta">Junta</option>
                   {/* {gamesDetails.data.map((game, i) => { */}
-                     {/* return (
+                  {/* return (
                      <option key={i} value={game.name}>{game.name}</option>
                      )
                   })} */}
@@ -156,9 +168,9 @@ export const Update = () => {
                 <input
                   id="photo"
                   className={classes.input9}
-                  type="file"
+                  type="text"
                   name="photo"
-                  placeholder="Select a file"
+                  placeholder="Select a photo URL"
                   onChange={handleInputChange}
                   value={formValues.photo}
                 />

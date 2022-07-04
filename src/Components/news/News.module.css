@@ -60,11 +60,14 @@
 /* 992px */
 @media (min-width: 992px){
     .container{
-        width: 75%;
+        max-width: 75%;
     }
 }
 /* 1200px */
 @media (min-width:1200px) {
+    .container{
+        max-width: 75%;
+    }
     .newImg{
         height: 35em;
     }

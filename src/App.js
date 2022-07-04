@@ -13,6 +13,7 @@ import {Review2} from "./Pages/Reviews/Review2"
 import {Review3} from "./Pages/Reviews/Review3"
 import {Update} from "./Pages/Update-profile/Update"
 import {Users} from "./Pages/Users/Users"
+import {Friends} from "./Pages/Friends/Friends"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route index element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/friends" element={<Friends/>}/>
       <Route path="/boardgames" element={<Boardgames/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/new1" element={<New1/>}/>

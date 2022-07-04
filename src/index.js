@@ -8,7 +8,6 @@ import { Header } from "./Components/header/Header";
 import { Footer } from "./Components/footer/Footer";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import Slider from "./Components/slider/Slider";
 import Slider2 from "./Components/slider/Slider2";
 import Slider3 from "./Components/slider/Slider3";
 import Slider4 from "./Components/slider/Slider4";
@@ -18,7 +17,6 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Header />
-      <Slider />
       <Slider2 />
       <Slider3 />
       <Slider4 />
