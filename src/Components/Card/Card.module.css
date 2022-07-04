@@ -41,7 +41,7 @@
 .img {
   width: 10em;
   height: 13em;
-  border-radius: 50%;
+  border-radius: 12px;
   margin:auto;
 }
 .columns {

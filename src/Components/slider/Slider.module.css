@@ -23,6 +23,9 @@
 /* breakpoints */
 
 @media (max-width: 565px){
+    .sliderContainer{
+        display: none;
+    }
     .sliderContainer2{
         display: none;
     }

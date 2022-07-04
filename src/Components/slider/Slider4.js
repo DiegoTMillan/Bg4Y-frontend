@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const Slider4 = () => {
   return (
     <motion.div className={classes.sliderContainer4}>
-      <motion.div className={classes.slider} drag='x' dragConstraints={{right:0, left:-800} }>
-        {images.map((image) => (
-          <motion.div className={classes.item}>
+      <motion.div className={classes.slider} drag='x' dragConstraints={{right:0, left:-700} }>
+        {images.map((image, i) => (
+          <motion.div key={i} className={classes.item}>
             <img src={image} alt="something wrong has happened" />
           </motion.div>
         ))}

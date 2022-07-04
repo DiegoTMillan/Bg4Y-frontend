@@ -2,12 +2,14 @@ import { useState, useEffect, Fragment } from "react";
 import { Spinner } from "../../Components/spinner/Spinner";
 import { Card } from "../../Components/Card/Card";
 import classes from "./Users.module.css";
+import { useSelector } from "react-redux";
 
 export const Users = () => {
+  // const user = useSelector((state) => state.login.login.data.data.info[0]);
   const [usersDetails, setUsersDetails] = useState();
 
   useEffect(() => {
-    //getting all classes
+    //getting all users
     fetch(`http://127.0.0.1:8000/users/`)
       .then((res) => res.json())
       .then((data) => {

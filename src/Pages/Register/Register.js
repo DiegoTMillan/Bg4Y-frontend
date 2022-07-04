@@ -4,40 +4,9 @@ import { addNewUser} from "../../Components/store/loginSlice";
 import { Spinner } from "../../Components/spinner/Spinner";
 import {Alert} from "../../Components/alert/Alert"
 import classes from "./Register.module.css";
-import { useNavigate, Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export const Register = (props) => {
-  // const navigate = useNavigate();
-  // const [formValues, setFormValues] = useState({
-  //   first_name: "",
-  //   last_name: "",
-  //   email: "",
-  //   password: "",
-  //   phone: "",
-  //   city: "",
-  //   district: "",
-  //   role: "user",
-  //   photo: "",
-  // });
-  // const handleInputChange = (e) => {
-  //   setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  // };
-  // //submit data
-  // const handleOnSubmit = (e) => {
-  //   e.preventDefault();
-  //   fetch("127.0.0.1:8000/users", {
-  //     method: "POST",
-  //     body: JSON.stringify(formValues),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       navigate("/dashboard", { replace: true });
-  //     });
-  // };
+export const Register = (props) => {;
   const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
   const loading = useSelector((state) => state.login.login.loading);
@@ -56,7 +25,6 @@ export const Register = (props) => {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    // if (props.action === "Register") {
       dispatch(addNewUser(data)).then(() => {
         setData({
           first_name: "",
@@ -80,19 +48,6 @@ export const Register = (props) => {
       [name]: value,
     });
   };
-
-  // import for select
-  // const [gamesDetails, setGamesDetails] = useState();
-
-  // useEffect(() => {
-  //   //getting all games
-  //   fetch(`http://127.0.0.1:8000/boardgames/`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       return setGamesDetails(data);
-  //     });
-  // }, []);
   return (
     <div className={classes.center}>
       {loading && <Spinner />}

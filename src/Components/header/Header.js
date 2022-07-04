@@ -1,9 +1,18 @@
 // import css
 import classes from "./Header.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { loginActions } from "../store/loginSlice";
 
 export const Header = () => {
-  let isLogged = false;
+  const user = useSelector((state) => state.login.login.data);
+  const isLogged = useSelector((state) => state.login.login.isLogged);
+
+  const dispatch = useDispatch();
+  const handleLogOut = () => {
+    dispatch(loginActions.logOut());
+  };
   return (
     <header>
       <div className={classes.container}>
@@ -22,7 +31,7 @@ export const Header = () => {
           <div
             // login button
             className={classes.loginNav}
-            onClick={(event) => (window.location.href = "/login")}
+            onClick={handleLogOut}
           >
             <i
               className={`${classes.loginIcon} fa-solid fa-right-from-bracket`}

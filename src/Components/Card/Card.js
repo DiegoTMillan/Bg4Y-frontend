@@ -1,8 +1,5 @@
 import { Fragment } from "react";
 import classes from "./Card.module.css";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { Spinner } from "../spinner/Spinner";
 
 export const Card = (props) => {
   return (
@@ -56,7 +53,6 @@ export const Card = (props) => {
           </div>
         </div>
       </div>
-      {/* <button onClick={()=>setToken(undefined)}>Log out</button> */}
     </Fragment>
   );
 };

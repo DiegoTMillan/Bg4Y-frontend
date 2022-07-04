@@ -84,7 +84,6 @@
         display: flex;
         justify-content: space-around;
         font-size: 2rem;
-        padding:1em 0em;
     }
     .titles h1:first-child{
         margin-left: 3em;
