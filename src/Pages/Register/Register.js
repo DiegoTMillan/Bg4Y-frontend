@@ -22,6 +22,7 @@ export const Register = (props) => {;
     district: "",
     role: "user",
     photo: "",
+    game_name:[],
   });
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,12 +42,13 @@ export const Register = (props) => {;
       });
     // }
   };
-
+//  let game_name = [];
   const handleChange = (event) => {
     const { name, value } = event.target;
     setData({
       ...data,
       [name]: value,
+      // game_name: Array.from.push([value])
     });
   };
 

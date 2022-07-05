@@ -25,17 +25,20 @@ export const Header = () => {
         <div className={classes.menuNav}>
           <Link to={`/`}>Home</Link>
           <Link to="/boardgames">Boardgames</Link>
-          <Link to="/dashboard">Profile</Link>
+          <Link to="/new1">Last news</Link>
+          <Link to="/review1">Last review</Link>
         </div>
         {isLogged && (
           <div
             // login button
-            className={classes.loginNav}
-            onClick={handleLogOut}
+            className={classes.loginOut}
+            // onClick={handleLogOut}
+            // to={"/login"}
           >
             <i
-              className={`${classes.loginIcon} fa-solid fa-right-from-bracket`}
+              className={`${classes.loginIconOut} fa-solid fa-address-card`}
             ></i>
+            <Link to="/dashboard">Profile</Link>
           </div>
         )}
         {!isLogged && (

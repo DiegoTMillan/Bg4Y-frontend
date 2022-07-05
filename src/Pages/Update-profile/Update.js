@@ -3,8 +3,11 @@ import classes from "./Update.module.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from "../../Components/spinner/Spinner";
+import { useSelector } from "react-redux";
 
 export const Update = () => {
+  const user = useSelector((state) => state.login.login.data);
+  const userId= user.data.info[0]._id
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     first_name: "",
@@ -16,6 +19,7 @@ export const Update = () => {
     district: "",
     role: "user",
     photo: "",
+    game_name: [],
   });
   const handleInputChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -23,7 +27,7 @@ export const Update = () => {
   //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch("http://127.0.0.1:8000/users", {
+    fetch(`http://127.0.0.1:8000/users/${userId}`, {
       method: "PATCH",
       body: JSON.stringify(formValues),
       headers: {
@@ -41,10 +45,9 @@ export const Update = () => {
 
   useEffect(() => {
     //getting all details
-    fetch(`http://127.0.0.1:8000/users/62b1ef42ab8614a1c0db096e`)
+    fetch(`http://127.0.0.1:8000/users/${userId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         return setProfileDetails(data);
       });
   }, []);

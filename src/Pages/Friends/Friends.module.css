@@ -21,6 +21,24 @@
   font-family: "Raleway";
   padding: 2em;
 }
+.formInput{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.inputControl{
+  border-radius: 5px;
+}
+.inputButton{
+  color: white;
+  font-size: 2rem;
+  padding: .2em;
+  margin-left: .4em;
+  background-color: #483d8b;
+  border-radius: 5px;
+}
+
 .friends {
   display: flex;
   justify-content: center;

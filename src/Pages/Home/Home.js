@@ -8,8 +8,7 @@ export const Home = () => {
   return (
     <Fragment>
       <div className={classes.titles}>
-        <h1>News</h1>
-        <h1>Reviews</h1>
+        <h1>News & Reviews</h1>
       </div>
       <div className={classes.center}>
         <div className={classes.news}>

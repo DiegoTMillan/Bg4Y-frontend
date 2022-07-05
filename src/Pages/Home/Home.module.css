@@ -67,12 +67,17 @@
         background-size:cover;
         background-repeat: no-repeat;
         z-index: -1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
     .news{
         max-width: 65%;
+        min-height: 170em;
     }
     .reviews{
         width: 40%;
+        min-height: 170em;
     }
     .newsTitle{
         display: none;
@@ -84,25 +89,5 @@
         display: flex;
         justify-content: space-around;
         font-size: 2rem;
-    }
-    .titles h1:first-child{
-        margin-left: 3em;
-    }
-    .titles h1:nth-child(2){
-        margin-left: 4.5em;
-    }
-    @media (min-width:1400px){
-        .news {
-            max-width: 55%;
-        }
-        .titles h1:first-child{
-            margin-left: .5em;
-        }
-        .titles h1:first-child{
-            margin-right: -4em;
-        }
-        /* .titles h1:nth-child(2){
-            margin-left: 1.4em;
-        } */
     }
 }

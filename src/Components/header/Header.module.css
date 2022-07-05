@@ -45,6 +45,25 @@
   font-size: 4rem;
   color: #483d8b;
 }
+.loginOut{
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  color: #483d8b;
+  text-align: center;
+  padding-top: .2em;
+}
+.loginOut a {
+  text-decoration: none;
+  font-family: "Lobster";
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-top: .3em;
+}
+.loginOut a:hover{
+  transform: scale(1.2);
+  transition: all ease-in-out .5s;
+}
 /* these items only is visible under 565px */
 .optionalNav {
   display: flex;
