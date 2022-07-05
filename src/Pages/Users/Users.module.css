@@ -1,59 +1,66 @@
 /* import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap");
 
 /* reboot css */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
-:root{
-    font-size: 0.785rem;
+:root {
+  font-size: 0.785rem;
 }
-.spinner{
-    height: 100vh;
+.spinner {
+  height: 100vh;
 }
 
-.container{
-        width: 100vw;
-        min-height: 75vh;
-        font-family: "Raleway";
-        padding: 2em;
+.container {
+  width: 100vw;
+  min-height: 75vh;
+  font-family: "Raleway";
+  padding: 2em;
 }
-.titles{
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-top: 1em;
-    color: #483D8B;
+.titles {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-top: 1em;
+  color: #483d8b;
 }
 @media (min-width: 768px) {
-    .titles {
-        font-size: 3rem;
-        padding-top: 0em
+  .bigContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .titles {
+    font-size: 3rem;
+    padding-top: 0em;
+  }
+  .container {
+    max-width: 60%;
+  }
 
-    }
-    @media (min-width: 992px){
+@media (min-width: 992px) {
+      .titles {
+        font-size: 3.5rem;
+      }
+
+      .container {
+        max-width: 45%;
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 30%;
+        }
         .titles {
-            font-size: 3.5rem;
+          padding-top: 0em;
         }
+      }
     }
-    @media (min-width: 1200px){
-        .titles{
-            padding-top: 0em;
-        }
-    }
-    @media (min-width: 1200px) {
-        .bigContainer{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        .container{
-            max-width: 30%;
-        }
-    }
-}
+  }
+

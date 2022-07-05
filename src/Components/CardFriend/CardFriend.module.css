@@ -99,6 +99,23 @@
   font-weight: bold;
   color: #483d8b;
 }
+.buttons {
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+}
+.buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0.5em;
+  padding: 10px 5px;
+  border-radius: 6px;
+  background-color: #483d8b;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .linkText {
   text-decoration: none;
   color: white;
@@ -129,7 +146,8 @@
 }
 @media (min-width: 768px) {
   .card1 {
-    max-width: 80%;
+    max-width: 100%;
+    min-height: 60em;
   }
   .column1 {
     margin-right: 0.5em;
@@ -144,10 +162,10 @@
 }
 @media (min-width: 992px) {
   .card1 {
-    max-width: 60%;
+    max-width: 100%;
   }
   .columns{
-    flex-direction: row;
+    flex-direction: column;
   }
   .buttons button {
     font-size: 1.5rem;
@@ -155,10 +173,11 @@
 }
 @media (min-width: 1200px) {
   .card1 {
-    max-width: 60%;
+    max-width:100%;
+    min-height:68em;
   }
-  button:hover {
-    transform: scale(1.4);
-    transition: all 0.2s ease-in-out;
+  .columns{
+    padding:0em;
+    flex-direction: column;
   }
 }

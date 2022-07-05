@@ -1,0 +1,96 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap");
+/* reboot css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  font-size: 0.785rem;
+}
+.container {
+  max-width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin:auto;
+}
+.banner {
+  padding: 1em;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.text1 {
+  font-family: "Lobster";
+  font-size: 4.5rem;
+  color: white;
+  animation-name: colors;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin:auto;
+}
+.text1 i {
+  color: red;
+}
+/* .text2{
+  font-family: "Lobster";
+  font-size: 8rem;
+  color: white;
+  display: none;
+}
+.text2:active{
+  display:contents;
+} */
+@keyframes colors {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: rgb(7, 118, 7);
+  }
+  75% {
+    color: rgb(110, 16, 211);
+  }
+  100% {
+    color: rgb(189, 158, 19);
+  }
+}
+@media (max-width: 565px) {
+  .container {
+    display: none;
+  }
+}
+@media (min-width: 565px) {
+  .text1{
+    font-size: 5.5rem;
+  }
+  @media (min-width: 768px) {
+    .text1 {
+      font-size: 6.8rem;
+    }
+    .text1 i{
+      padding: 0em .5em;
+    }
+    @media (min-width: 992px) {
+      .text1 {
+        font-size: 9rem;
+      }
+    }
+    @media (min-width:1200px){
+      .text1{
+        font-size:10em
+      }
+    }
+  }
+}

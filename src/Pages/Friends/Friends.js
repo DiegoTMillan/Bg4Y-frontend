@@ -28,6 +28,7 @@ export const Friends = () => {
   return (
     <Fragment>
       <h1 className={classes.friends}>Contact Friends</h1>
+      <div className={classes.bigContainer}>
       {usersDetails.data.map((user, index) => {
         return (
           <div className={classes.container}>
@@ -45,6 +46,7 @@ export const Friends = () => {
           </div>
         );
       })}
+      </div>
     </Fragment>
   );
 };
