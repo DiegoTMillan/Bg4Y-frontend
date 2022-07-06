@@ -23,15 +23,15 @@ Please check that apache and NPM is fully installed and operating
 
   - React
 
-We are going to create a new project
+We are going to clone the repository
 
 ```
- npx create-react-app folderName
+git clone https://github.com/DiegoTMillan/Bg4Y-backend.git
 ```
 
-Once, the project has been created. We have to make a pull from this repository:
+Once, the project has been created. We have to install some dependencies:
 ```
-https://github.com/DiegoTMillan/Bg4Y-backend.git
+npm install
 ```
 
  3. ### Adding tools
