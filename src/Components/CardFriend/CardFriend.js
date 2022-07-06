@@ -12,7 +12,7 @@ export const CardFriend = (props) => {
           </div>
           <div className={classes.profile}>
             <div className={classes.photo}>
-              <img alt="sorry, something is broken" className={classes.img} src={props.photo}></img>
+              <img alt="" className={classes.img} src={props.photo}></img>
             </div>
             <div className={classes.titleName}>
               <h2>

@@ -15,7 +15,6 @@ export const Login = (props) => {
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const error = useSelector((state) => state.login.error);
-  let route = "/dashboard/62b1ef42ab8614a1c0db096e"
   const [data, setData] = useState({
     email: "",
     password: "",

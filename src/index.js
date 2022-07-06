@@ -9,9 +9,6 @@ import { Footer } from "./Components/footer/Footer";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Banner } from "./Components/Banner/Banner";
-import Slider2 from "./Components/slider/Slider2";
-import Slider3 from "./Components/slider/Slider3";
-import Slider4 from "./Components/slider/Slider4";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

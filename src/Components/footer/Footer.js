@@ -1,8 +1,12 @@
 // import css
 import classes from "./Footer.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+
 
 export const Footer = () => {
+  const isLogged = useSelector((state) => state.login.login.isLogged);
   return (
     <footer>
       {/* container for all elements elements */}
@@ -59,11 +63,11 @@ export const Footer = () => {
           <div className={classes.group1}>
             <Link to={`/`}>Home</Link>
             <Link to="/boardgames">Boardgames</Link>
-            <Link to="/dashboard">Profile</Link>
           </div>
           <div className={classes.group2}>
             <Link to="/register">Sign Up</Link>
-            <Link to="/login">Login</Link>
+            {(!isLogged && <Link to="/login">Login</Link>)}
+            {(isLogged && <Link to="/dashboard">Profile</Link>)}
           </div>
         </div>
         {/* container for last group of items. Only appears with the last breakpoint */}

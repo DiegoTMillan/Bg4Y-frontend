@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const baseURL = "http://127.0.0.1:8000/login";
+const loginURL = "http://127.0.0.1:8000/login";
+const userURL = "http://127.0.0.1:8000/users";
 
 const defaultData = {
   data: {},
@@ -12,7 +13,7 @@ export const addNewUser = createAsyncThunk(
   "login/addNewUser",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch(baseURL + "/new", {
+      const response = await fetch(loginURL + "/new", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -30,7 +31,7 @@ export const signIn = createAsyncThunk(
   "login/signIn",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch(baseURL, {
+      const response = await fetch(loginURL, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -40,6 +41,26 @@ export const signIn = createAsyncThunk(
       return response.json();
     } catch (error) {
       return rejectWithValue("Failed to fetch, trying to sign in");
+    }
+  }
+);
+export const updateProfile = createAsyncThunk(
+  "login/updateProfile",
+  async (data, { rejectWithValue }) => {
+    try {
+      // console.log(userURL + "/" + data._id);
+      console.log(data)
+      const response = await fetch(userURL + "/" + data._id, {
+        method: "PATCH",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          "authorization":"Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlhdCI6MTY1NzExMjgzNCwiZXhwIjoxNjU3MTEzNzM0fQ.WSJnYWfaj8-8FPdl3fJY0wIE6gcedkugQR5_OyoK3Sg"
+        },
+      });
+      return response.json();
+    } catch (error) {
+      return rejectWithValue("Failed to fetch, trying to update profile");
     }
   }
 );
@@ -78,6 +99,20 @@ export const loginSlice = createSlice({
       state.status = "succeeded";
     },
     [signIn.rejected]: (state, action) => {
+      state.login.loading = false;
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [updateProfile.pending]: (state) => {
+      state.login.loading = true;
+      state.status = "loading";
+    },
+    [updateProfile.fulfilled]: (state, action) => {
+      state.login.data = action.payload;
+      state.login.loading = false;
+      state.status = "succeeded";
+    },
+    [updateProfile.rejected]: (state, action) => {
       state.login.loading = false;
       state.status = "rejected";
       state.error = action.payload;

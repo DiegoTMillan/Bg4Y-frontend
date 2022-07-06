@@ -12,6 +12,7 @@ export const Register = (props) => {;
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const error = useSelector((state) => state.login.error);
+
   const [data, setData] = useState({
     first_name: "",
     last_name: "",
@@ -40,16 +41,17 @@ export const Register = (props) => {;
           game_name:[],
         });
       });
-    // }
   };
-//  let game_name = [];
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setData({
-      ...data,
-      [name]: value,
-      // game_name: Array.from.push([value])
-    });
+  const handleChange = (e) => {
+    if (e.target.name === "game_name") {
+      let value = Array.from(
+        e.target.selectedOptions,
+        (option) => option.value
+      );
+      setData((prev) => ({ ...prev, [e.target.name]: value }));
+    } else {
+      setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
   };
 
   return (
@@ -62,8 +64,7 @@ export const Register = (props) => {;
         )}
       {status === "succeeded" &&
         user.status === "succeeded" && (
-        // props.type === "Register" && (
-          <Alert type="success" message="You have successfully registered. Now yo can login and enjoy!" />
+          <Alert type="success" message="You have been successfully registered. Now yo can login and enjoy!" />
           // <Navigate to="/dashboard" replace />
         )}
       {!loading && (
@@ -159,7 +160,7 @@ export const Register = (props) => {;
                   id="games"
                   className={classes.input8}
                   type="select"
-                  multiple
+                  multiple={true}
                   name="game_name"
                   placeholder="Select your games"
                   onChange={handleChange}
@@ -185,7 +186,7 @@ export const Register = (props) => {;
                     );
                   })} */}
                 </select>
-                <label htmlFor="photo">Select a photo URL</label>
+                {/* <label htmlFor="photo">Select a photo URL</label>
                 <input
                   id="photo"
                   className={classes.input9}
@@ -194,7 +195,7 @@ export const Register = (props) => {;
                   placeholder="URL"
                   onChange={handleChange}
                   value={data.photo}
-                />
+                /> */}
               </div>
             </div>
             <div className={classes.button}>

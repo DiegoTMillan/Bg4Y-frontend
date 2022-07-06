@@ -3,29 +3,41 @@ import { Spinner } from "../../Components/spinner/Spinner";
 import { Card } from "../../Components/Card/Card";
 import classes from "./Users.module.css";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 export const Users = () => {
-  // const user = useSelector((state) => state.login.login.data.data.info[0]);
+  const token = useSelector((state) => state.login.login.data.data.token);
   const [usersDetails, setUsersDetails] = useState();
 
-  useEffect(() => {
-    //getting all users
-    fetch(`http://127.0.0.1:8000/users/`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        return setUsersDetails(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   //getting all users
+  //   fetch(`http://127.0.0.1:8000/users/`, {
+  //     method: "GET",
+  //     headers: {
+  //       'authorization': "Bearer" + token,
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       return setUsersDetails(data);
+  //     });
+  // }, []);
+  axios
+    .get("http://127.0.0.1:8000/users/", {
+      headers: {
+        'authorization': 'Bearer' + token,
+        'Content-Type': 'application/json'
+      },
+    })
+    .then((response) => {
+      setUsersDetails(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
-//  const handleDelete = async (id) => {
-//   await user.delete(id);
-//   setUsersDetails(
-//     usersDetails.data.filter((user)=>{
-//       return user.id !== id;
-//     })
-//   )
-//  }
   if (!usersDetails) {
     return (
       <div className={classes.spinner}>

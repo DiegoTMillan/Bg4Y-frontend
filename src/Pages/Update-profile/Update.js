@@ -1,58 +1,85 @@
 import { Fragment } from "react";
 import classes from "./Update.module.css";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Spinner } from "../../Components/spinner/Spinner";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateProfile } from "../../Components/store/loginSlice";
+import { Navigate } from "react-router-dom";
 
 export const Update = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
-  const userId= user.data.info[0]._id
-  const navigate = useNavigate();
+  // const status = useSelector((state) => state.login.status);
+  console.log(user.data.token)
+  // const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    phone: "",
-    city: "",
-    district: "",
+    _id: user.data.info[0]._id,
+    first_name: user.data.info[0].first_name,
+    last_name: user.data.info[0].last_name,
+    password: user.data.info[0].password,
+    phone: user.data.info[0].phone,
+    city: user.data.info[0].city,
+    district: user.data.info[0].district,
     role: "user",
-    photo: "",
+    // photo: "",
     game_name: [],
   });
   const handleInputChange = (e) => {
-    setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    // console.log(e.target.selectedOptions);
+    if (e.target.name === "game_name") {
+      let value = Array.from(
+        e.target.selectedOptions,
+        (option) => option.value
+      );
+      setFormValues((prev) => ({ ...prev, [e.target.name]: value }));
+    } else {
+      setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
   };
   //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://127.0.0.1:8000/users/${userId}`, {
-      method: "PATCH",
-      body: JSON.stringify(formValues),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        navigate("/dashboard", { replace: true });
+    console.log(formValues);
+    dispatch(updateProfile(formValues)).then(() => {
+      setFormValues({
+        _id: user.data.info[0]._id,
+        first_name: user.data.info[0].first_name,
+        last_name: user.data.info[0].last_name,
+        password: user.data.info[0].password,
+        phone: user.data.info[0].phone,
+        city: user.data.info[0].city,
+        district: user.data.info[0].district,
+        role: "user",
+        // photo: "",
+        game_name: [],
       });
+    });
+    //   fetch(`http://127.0.0.1:8000/users/${userId}`, {
+    //     method: "PATCH",
+    //     body: JSON.stringify(formValues),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       navigate("/dashboard", { replace: true });
+    //     });
   };
 
   //getting info about user
-  const [profileDetails, setProfileDetails] = useState();
+  // const [profileDetails, setProfileDetails] = useState();
 
-  useEffect(() => {
-    //getting all details
-    fetch(`http://127.0.0.1:8000/users/${userId}`)
-      .then((res) => res.json())
-      .then((data) => {
-        return setProfileDetails(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   //getting all details
+  //   fetch(`http://127.0.0.1:8000/users/${userId}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       return setProfileDetails(data);
+  //     });
+  // }, []);
 
-  if (!profileDetails) {
+  if (!user) {
     return (
       <div className={classes.spinner}>
         <Spinner />
@@ -62,6 +89,9 @@ export const Update = () => {
   return (
     <Fragment>
       <div className={classes.center}>
+      {/* {status === "succeeded" && user.status === "succeeded" && (
+        <Navigate to='/dashboard' replace={true} />
+      )} */}
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
           <h1>Bg4U</h1>
@@ -76,7 +106,7 @@ export const Update = () => {
                   type="text"
                   name="first_name"
                   value={formValues.first_name}
-                  placeholder={profileDetails.data.first_name}
+                  // placeholder={profileDetails.data.first_name}
                   required
                   onChange={handleInputChange}
                 />
@@ -87,7 +117,7 @@ export const Update = () => {
                   type="text"
                   name="last_name"
                   value={formValues.last_name}
-                  placeholder={profileDetails.data.last_name}
+                  // placeholder={profileDetails.data.last_name}
                   required
                   onChange={handleInputChange}
                 />
@@ -108,7 +138,7 @@ export const Update = () => {
                   className={classes.input5}
                   type="text"
                   name="phone"
-                  placeholder={profileDetails.data.phone}
+                  // placeholder={profileDetails.data.phone}
                   onChange={handleInputChange}
                   value={formValues.phone}
                 />
@@ -120,7 +150,7 @@ export const Update = () => {
                   className={classes.input6}
                   type="text"
                   name="city"
-                  placeholder={profileDetails.data.city}
+                  // placeholder={profileDetails.data.city}
                   required
                   onChange={handleInputChange}
                   value={formValues.city}
@@ -133,7 +163,7 @@ export const Update = () => {
                   className={classes.input7}
                   type="text"
                   name="district"
-                  placeholder={profileDetails.data.district}
+                  // placeholder={profileDetails.data.district}
                   required
                   onChange={handleInputChange}
                   value={formValues.district}
@@ -143,7 +173,7 @@ export const Update = () => {
                   id="games"
                   className={classes.input8}
                   type="select"
-                  multiple
+                  multiple={true}
                   name="game_name"
                   placeholder="Select your games"
                   onChange={handleInputChange}
@@ -167,7 +197,7 @@ export const Update = () => {
                      )
                   })} */}
                 </select>
-                <label htmlFor="photo">Select a photo</label>
+                {/* <label htmlFor="photo">Select a photo</label>
                 <input
                   id="photo"
                   className={classes.input9}
@@ -176,7 +206,7 @@ export const Update = () => {
                   placeholder="Select a photo URL"
                   onChange={handleInputChange}
                   value={formValues.photo}
-                />
+                /> */}
               </div>
             </div>
             <div className={classes.button}>
