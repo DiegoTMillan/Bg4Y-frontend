@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Bg4Y-backend :computer:
+Boardgames 4 you Frontend.\
+This is only the front of a bigger project. Here is the URL of the other repository:
+  ### Bg4Y-frontend
+  ```
+  https://github.com/DiegoTMillan/Bg4Y-backend.git
+  ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Presentation :green_book:
+Hi everyone. I am Diego Tapia and this is my final project Boardgames 4 you. Although there are many different areas, probably more insteresting.
+It's a fact that I am an authentic fanatic of boardgames.
+Indeed I am full motivated because I want to share something really special with everyone, just make by myself.
 
-## Available Scripts
+## Get Start :arrow_forward:
 
-In the project directory, you can run:
+If you want to see my project in your computer, please, follow this steps:
 
-### `npm start`
+  1. ### Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Please check that apache and NPM is fully installed and operating
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  2. ### Install
 
-### `npm test`
+  - React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We are going to create a new project
 
-### `npm run build`
+```
+ npx create-react-app folderName
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once, the project has been created. We have to make a pull from this repository:
+```
+https://github.com/DiegoTMillan/Bg4Y-backend.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 3. ### Adding tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Now we have to install redux, , @reduxjs/toolkit, axios and router-dom
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm install react-redux @reduxjs/toolkit axios  react-router-dom
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. ### Make it function
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+And now if you want to see it in the screen:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm start
+```
 
-## Learn More
+## Basic Structure :bookmark_tabs:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+React was the choice for the frontend because it was one of the objetives of the project. Obviously, it's an incredible tool and very popular.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  1. ### index.js
 
-### Code Splitting
+  - This is the structure of most important components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+  <Provider store={store}>
+    <BrowserRouter>
+      <Header />
+      <Banner/>
+      <App />
+      <Footer />
+    </BrowserRouter>
+  </Provider>
+```
+  2. ### Breakpoints
 
-### Analyzing the Bundle Size
+in this project, we had to use at least three differents breakpoints. Almost we were required to use only three, indeed, in my components i have used 4 or even more.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- A table with most commons breakpoints:
 
-### Making a Progressive Web App
+|SIZE|DEVICE|
+|---|---|
+|under 526px|Mobile|
+|under 768px|Mobile|
+|under 992px|Tablet|
+|under 1200px|Screen|
+|more than 1200px|Large screen|
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  3. ### Login and Register
 
-### Advanced Configuration
+This is the heart of the front and I decided to use loginSlice for async requirements.\
+Here is a litte example from loginSlice.js:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+export const addNewUser = createAsyncThunk(
+  "login/addNewUser",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await fetch(loginURL + "/new", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.json();
+    } catch (error) {
+      return rejectWithValue("Failed to fetch, trying to register a new user");
+    }
+  }
+);
+```
 
-### Deployment
+   4. ### Folder structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+As you can see, there are a folder with all components. Indeed, inside each folder there are a js and a css file.\
+On the other hand there is another folder with all pages with the same structure.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
