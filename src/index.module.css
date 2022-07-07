@@ -20,6 +20,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.pexels.com/photos/8111259/pexels-photo-8111259.jpeg");
+  background-size:auto;
 
 }
 

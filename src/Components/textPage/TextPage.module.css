@@ -16,17 +16,23 @@
     width:100%;
     padding:2em 3.5em;
     font-family: "Raleway";
-    /* background-color: white; */
+}
+.miniTitle{
+    font-weight:700;
 }
 img{
     width: 100%;
     padding: 1em 0em;
 }
-h2 {
-    color: rgb(10, 10, 131);
+.textContainer{
+    background-color: white;
+    border-radius: 5px;
+    opacity: .8;
+    padding: 1em;
 }
-h1{
+.bigAbstract{
     padding:.5em 0em;
+    color: darkred;
 }
 .bigText{
     line-height: 2.5rem;

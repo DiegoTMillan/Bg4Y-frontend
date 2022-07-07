@@ -26,8 +26,11 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  padding-top: 1em;
-  color: #483d8b;
+  padding: 1em;
+  color: rgb(4, 71, 100);
+  background-color: white;
+  opacity: .8;
+  margin:2em 0em;
 }
 @media (min-width: 768px) {
   .bigContainer {
@@ -38,7 +41,6 @@
   }
   .titles {
     font-size: 3rem;
-    padding-top: 0em;
   }
   .container {
     max-width: 60%;
@@ -56,9 +58,6 @@
       @media (min-width: 1200px) {
         .container {
           max-width: 30%;
-        }
-        .titles {
-          padding-top: 0em;
         }
       }
     }

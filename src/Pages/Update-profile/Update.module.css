@@ -31,14 +31,17 @@
 .card1 .iconDice{
     text-align: center;
     font-size: 3.5em;
-    color: #483D8B;
+    color: rgb(4, 71, 100);
     margin-bottom: 0.25em;
 }
 .card1 h1 {
     font-family: "Lobster";
     text-align: center;
-    color: #483D8B;
+    color: rgb(4, 71, 100);
     padding-bottom: .5em;
+}
+.card1 h2 {
+    color: darkred;
 }
 form{
     display:flex;
@@ -66,6 +69,7 @@ label{
     margin-bottom: 1em;
     text-align:left;
     font-size: 1.5rem;
+    color:rgb(4, 71, 100);
 }
 input{
     padding: 12px 25px;
@@ -86,7 +90,7 @@ select{
     width: 90%;
     padding: 8px 4px;
     border-radius: 5px;
-    background-color: #483D8B;
+    background-color: rgb(4, 71, 100);
     font-size: 1.6rem;
     color: white;
     font-weight: bold;

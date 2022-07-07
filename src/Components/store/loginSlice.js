@@ -65,6 +65,25 @@ export const updateProfile = createAsyncThunk(
   }
 );
 
+// export const getBoardgames = createAsyncThunk(
+//   "login/getBoardgames",
+//   async (data, { rejectWithValue }) => {
+//     try {
+//       // console.log(userURL + "/" + data._id);
+//       console.log(data)
+//       const response = await fetch(userURL + "/" + data._id, {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//       return response.json();
+//     } catch (error) {
+//       return rejectWithValue("Failed to fetch, trying to update profile");
+//     }
+//   }
+// );
+
 export const loginSlice = createSlice({
   name: "login",
   initialState: { login: defaultData, status: "idle", error: null },
@@ -117,6 +136,15 @@ export const loginSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
+  //   [getBoardgames.pending]: (state) => {
+  //     state.login.loading = true;
+  //     state.status = "loading";
+  //   },
+  //   [getBoardgames.rejected]: (state, action) => {
+  //     state.login.loading = false;
+  //     state.status = "rejected";
+  //     state.error = action.payload;
+  //   },
   },
 });
 

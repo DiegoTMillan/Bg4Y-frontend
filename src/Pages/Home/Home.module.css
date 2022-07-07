@@ -13,19 +13,25 @@
 }
 .titles{
     display:none;
-    background-color: #483D8B;
-    color: white;
+    background-color: white;
+    color: black;
+    opacity: .8;
 }
 .news{
     padding-top:1em;
 }
+
 .divTitle{
     width:30%;
+    vertical-align: center;
     text-align: center;
     margin-left: 1em;
     background-color: #faf9fe;
     border-radius: 4px;
     opacity: .7;
+}
+.divTitle h1{
+    padding-bottom:.5em;
 }
 .divReview{
     width:40%;
@@ -35,6 +41,9 @@
     border-radius: 4px;
     opacity: .7;
 }
+.divReview h1{
+    padding-bottom: .5em;
+}
 .reviewsTitle{
     margin-top:1em;
 }
@@ -43,7 +52,7 @@
     margin:auto;
     padding-top: .5em;
     font-size: 2.5rem;
-    color: #483D8B;
+    color: rgb(4, 71, 100);
 }
 
 
@@ -63,10 +72,6 @@
 @media (min-width:1200px) {
     .center{
         display: flex;
-        background-image: url("https://images.pexels.com/photos/4887249/pexels-photo-4887249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-        background-size:cover;
-        background-repeat: no-repeat;
-        z-index: -1;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -89,5 +94,8 @@
         display: flex;
         justify-content: space-around;
         font-size: 2rem;
+        padding: 1em;
+        color: rgb(4, 71, 100);
+        margin:2em 0em;
     }
 }

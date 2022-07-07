@@ -1,0 +1,145 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap");
+/* reboot css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+:root {
+  font-size: 0.785rem;
+}
+/* login card */
+.container {
+  padding: 2em;
+  font-family: "Raleway";
+}
+.card1 {
+  margin: auto;
+  padding: 0.3em;
+  text-align: center;
+  background-color: #faf9fe;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px grey;
+}
+.card1 h1 {
+  font-family: "Lobster";
+  text-align: center;
+  color: darkred;
+  margin-bottom: .5em;
+}
+.photo {
+  margin: auto;
+}
+.img {
+  width: 19em;
+  height: 16em;
+  margin: auto;
+}
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1em;
+}
+.column1 {
+  display: flex;
+  flex-direction: column;
+}
+.column1 div {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+.column1 div i {
+  color: #2274a5;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+.column1 div p {
+  font-size: 1.5rem;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+}
+.column2 div {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+.column2 div i {
+  color: #2274a5;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+.column2 div p {
+  font-size: 1.5rem;
+}
+
+/* breakpoints */
+@media (min-width: 565px) {
+  .img {
+    height: 20em;
+    width: 24em;
+    margin: auto;
+  }
+  .columns {
+    flex-direction: row;
+  }
+  .column1 {
+    min-width: 45%;
+  }
+  .column2 {
+    min-width: 45%;
+  }
+
+  @media (min-width: 768px) {
+    .card1 {
+      max-width: 70%;
+    }
+    .img {
+      height: 21em;
+      width: 25em;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 45%;
+    }
+    .card1 {
+      min-width: 100%;
+      min-height: 72em;
+    }
+    .columns {
+      flex-direction: column;
+    }
+
+    @media (min-width: 1200px) {
+      .img {
+        height: 20em;
+        width: 24em;
+      }
+      .container{
+        width: 32%;
+      }
+      .card1 {
+        max-width: 100%;
+        min-height: 70em;
+      }
+      .columns {
+        padding: 0em;
+        flex-direction: column;
+      }
+    }
+    @media (min-width: 1600px) {
+      .columns{
+        flex-direction: row;
+      }
+      .card1{
+        min-height: 55em;
+      }
+    }
+  }
+}

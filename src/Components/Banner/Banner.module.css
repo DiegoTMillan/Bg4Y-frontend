@@ -11,17 +11,20 @@
   font-size: 0.785rem;
 }
 .container {
-  max-width: 95%;
+  max-width: 100%;
+  min-height: 10em;
+  background-size: cover;
+  background-position: 75% 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  vertical-align: center;
   margin:auto;
+  background-color: white;
 }
 .banner {
-  padding: 1em;
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
+  /* border-top: 2px solid grey;
+  border-bottom: 2px solid grey; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,6 +39,7 @@
   animation-duration: 5s;
   animation-iteration-count: infinite;
   margin:auto;
+  padding-top: .3em;
 }
 .text1 i {
   color: red;
@@ -51,16 +55,10 @@
 } */
 @keyframes colors {
   0% {
-    color: red;
-  }
-  25% {
-    color: blue;
+    color: rgb(189, 158, 19);
   }
   50% {
-    color: rgb(7, 118, 7);
-  }
-  75% {
-    color: rgb(110, 16, 211);
+    color: rgb(192, 198, 203)
   }
   100% {
     color: rgb(189, 158, 19);

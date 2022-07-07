@@ -46,9 +46,9 @@ export const Dashboard = () => {
               ></img>
             </div>
             <div className={classes.titleName}>
-              <h2>
+              <h1>
                 {user.first_name} {user.last_name}
-              </h2>
+              </h1>
             </div>
             <div className={classes.columns}>
               <div className={classes.column1}>

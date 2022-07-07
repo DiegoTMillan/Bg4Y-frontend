@@ -15,9 +15,9 @@ export const CardFriend = (props) => {
               <img alt="" className={classes.img} src={props.photo}></img>
             </div>
             <div className={classes.titleName}>
-              <h2>
+              <h1>
                 {props.first_name} {props.last_name}
-              </h2>
+              </h1>
             </div>
             <div className={classes.columns}>
               <div className={classes.column1}>

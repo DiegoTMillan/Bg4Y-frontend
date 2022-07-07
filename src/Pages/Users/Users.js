@@ -27,7 +27,7 @@ export const Users = () => {
   axios
     .get("http://127.0.0.1:8000/users/", {
       headers: {
-        'authorization': 'Bearer' + token,
+        'authorization': 'Bearer ' + token,
         'Content-Type': 'application/json'
       },
     })

@@ -31,13 +31,13 @@
 .card1 .iconDice{
     text-align: center;
     font-size: 3.5em;
-    color: #483D8B;
+    color: rgb(4, 71, 100);
     margin-bottom: 0.25em;
 }
 .card1 h1 {
     font-family: "Lobster";
     text-align: center;
-    color: #483D8B;
+    color: rgb(4, 71, 100);
 }
 form{
     display:flex;
@@ -62,12 +62,17 @@ label{
     margin-bottom: 1em;
     font-size: 1.3rem;
 }
+.link {
+    text-decoration: none;
+    color: darkred;
+    font-weight: bold;
+}
 .button button{
     margin-top: 0.5em;
     width: 100%;
     padding: 8px 4px;
     border-radius: 5px;
-    background-color: #483D8B;
+    background-color:rgb(4, 71, 100);
     font-size: 1.6rem;
     color: white;
     font-weight: bold;

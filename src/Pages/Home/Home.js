@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import classes from "./Home.module.css";
 import { News } from "../../Components/news/News";
 import { Review } from "../../Components/reviews/Review";
-import Slider from "../../Components/slider/Slider";
 
 export const Home = () => {
   return (
