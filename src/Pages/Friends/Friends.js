@@ -2,36 +2,47 @@ import { useState, useEffect, Fragment, useRef } from "react";
 import { Spinner } from "../../Components/spinner/Spinner";
 import { CardFriend } from "../../Components/CardFriend/CardFriend";
 import classes from "./Friends.module.css";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { getFriends } from "../../Components/store/loginSlice";
+// import axios from "axios";
 
 export const Friends = () => {
   // const user = useSelector((state) => state.login.login.data.data.info[0]);
   //   db.users.find({"game_name":{$in:["Maracaibo", "K2"]}}, {"first_name":1, "last_name":1, "phone":1, "city":1, "district":1, "game_name":1, "photo":1, "_id":0})
-  const token = useSelector((state) => state.login.login.data.data?.token);
-  const [usersDetails, setUsersDetails] = useState();
+  // const token = useSelector((state) => state.login.login.data.data?.token);
   const searchInputRef = useRef();
+  const [usersDetails, setUsersDetails] = useState();
   const [usersCard, setUsersCard] = useState();
   const [searchInput, setSearchInput] = useState();
 
-  console.log(usersDetails)
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.login.login.data.data.info[0]);
+  const loading = useSelector((state) => state.login.login.loading);
+  const status = useSelector((state) => state.login.status);
+  console.log(user)
 
-  const getInfo = async () => {
-    await axios
-      .get("http://127.0.0.1:8000/users/", {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      })
-      .then((response) => {
-        // setUsersCard(response.data);
-        setUsersDetails(response.data);
-        setUsersCard(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-}
+  // dispatch(getFriends(data)).then()
+  // setUsersDetails(data)
+  // console.log(usersDetails) 
+
+
+
+//   const getInfo = async () => {
+//     await axios
+//       .get("http://127.0.0.1:8000/users/", {
+//         headers: {
+//           authorization: "Bearer " + token,
+//         },
+//       })
+//       .then((response) => {
+//         // setUsersCard(response.data);
+//         setUsersDetails(response.data);
+//         setUsersCard(response.data);
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+// }
   // console.log(usersDetails.data)
 
   const handleChange = (e) => {
@@ -73,9 +84,9 @@ export const Friends = () => {
   //   );
   // }
 
-  useEffect(() => {
-    getInfo();
-  }, []);
+  // useEffect(() => {
+  //   getInfo();
+  // }, []);
 
   if (!usersDetails) {
     return (
@@ -105,8 +116,7 @@ export const Friends = () => {
           return (
             <div className={classes.container}>
               <CardFriend
-               
-                key={user.index}
+                key={index}
                 photo={user.photo}
                 first_name={user.first_name}
                 last_name={user.last_name}

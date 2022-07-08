@@ -1,23 +1,10 @@
-/* import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap');
-/* reboot css */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-:root {
-  font-size: 0.785rem;
-}
-
 .container {
   width: 100vw;
   min-height: 75vh;
   font-family: "Raleway";
   padding: 2em;
 }
-/* login card */
+/* profile card */
 .card1 {
   justify-content: center;
   align-items: center;
@@ -61,12 +48,11 @@
   color: rgb(4, 71, 100);
 }
 .photo {
-  width: 40%;
   margin: auto;
 }
 .img {
-  width: 10em;
-  height: 13em;
+  width: 13em;
+  height: 16em;
   border-radius: 50%;
 }
 .columns {
@@ -174,10 +160,13 @@
     height: 20em;
     width: 17em;
   }
+  .card1{
+    max-width: 65%;
+  }
 }
 @media (min-width: 768px) {
   .card1 {
-    max-width: 80%;
+    max-width: 60%;
   }
   .column1 {
     margin-right: 0.5em;
@@ -192,7 +181,7 @@
 }
 @media (min-width: 992px) {
   .card1 {
-    max-width: 65%;
+    max-width: 50%;
   }
   .buttons button {
     font-size: 1.5rem;
@@ -200,10 +189,10 @@
 }
 @media (min-width: 1200px) {
   .card1 {
-    max-width: 60%;
+    max-width: 40%;
   }
   .link:hover {
-    transform: scale(1.4);
+    transform: scale(1.1);
     transition: all 0.2s ease-in-out;
   }
 }

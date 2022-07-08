@@ -1,20 +1,3 @@
-/* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap");
-
-/* reboot css */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-:root {
-  font-size: 0.785rem;
-}
-.spinner {
-  height: 100vh;
-}
-
 .container {
   width: 100vw;
   min-height: 75vh;

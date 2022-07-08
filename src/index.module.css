@@ -1,5 +1,6 @@
 /* import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600&family=Lobster&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;500;700&display=swap");
+
 /* reboot css */
 * {
   box-sizing: border-box;
@@ -7,9 +8,14 @@
   padding: 0;
   border: 0;
 }
+:root {
+  font-size: 0.785rem;
+}
+.spinner {
+  height: 100vh;
+}
 #root{
   max-width: 100vw;
-  font-size: 0.785rem;
 }
 body {
   width: 100%;

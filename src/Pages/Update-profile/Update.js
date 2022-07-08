@@ -1,31 +1,33 @@
-import { Fragment } from "react";
 import classes from "./Update.module.css";
 import { Spinner } from "../../Components/spinner/Spinner";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../../Components/store/loginSlice";
 import { Navigate } from "react-router-dom";
+import { Alert } from "../../Components/alert/Alert";
 
 export const Update = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
-  // const status = useSelector((state) => state.login.status);
-  console.log(user.data.token)
-  // const navigate = useNavigate();
-  const [formValues, setFormValues] = useState({
-    _id: user.data.info[0]._id,
-    first_name: user.data.info[0].first_name,
-    last_name: user.data.info[0].last_name,
-    password: user.data.info[0].password,
-    phone: user.data.info[0].phone,
-    city: user.data.info[0].city,
-    district: user.data.info[0].district,
-    role: "user",
-    // photo: "",
-    game_name: [],
-  });
+  const loading = useSelector((state) => state.login.login.loading);
+  const status = useSelector((state) => state.login.status);
+
+  const [formValues, setFormValues] = useState(
+    (user.data && {
+      _id: user.data.info[0]._id,
+      first_name: user.data.info[0].first_name,
+      last_name: user.data.info[0].last_name,
+      password: user.data.info[0].password,
+      phone: user.data.info[0].phone,
+      city: user.data.info[0].city,
+      district: user.data.info[0].district,
+      photo: user.data.info[0].photo,
+      role: "user",
+      game_name: [],
+    }) ||
+      {}
+  );
   const handleInputChange = (e) => {
-    // console.log(e.target.selectedOptions);
     if (e.target.name === "game_name") {
       let value = Array.from(
         e.target.selectedOptions,
@@ -39,59 +41,35 @@ export const Update = () => {
   //submit data
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
-    dispatch(updateProfile(formValues)).then(() => {
+    dispatch(updateProfile(formValues)).then((result) => {
+      console.log(result);
       setFormValues({
-        _id: user.data.info[0]._id,
-        first_name: user.data.info[0].first_name,
-        last_name: user.data.info[0].last_name,
-        password: user.data.info[0].password,
-        phone: user.data.info[0].phone,
-        city: user.data.info[0].city,
-        district: user.data.info[0].district,
+        _id: result.payload.data._id,
+        first_name: result.payload.data.first_name,
+        last_name: result.payload.data.last_name,
+        password: result.payload.data.password,
+        phone: result.payload.data.phone,
+        city: result.payload.data.city,
+        district: result.payload.data.district,
         role: "user",
-        // photo: "",
+        photo: result.payload.data.district,
         game_name: [],
       });
     });
-    //   fetch(`http://127.0.0.1:8000/users/${userId}`, {
-    //     method: "PATCH",
-    //     body: JSON.stringify(formValues),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       navigate("/dashboard", { replace: true });
-    //     });
   };
 
-  //getting info about user
-  // const [profileDetails, setProfileDetails] = useState();
-
-  // useEffect(() => {
-  //   //getting all details
-  //   fetch(`http://127.0.0.1:8000/users/${userId}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       return setProfileDetails(data);
-  //     });
-  // }, []);
-
-  if (!user) {
-    return (
-      <div className={classes.spinner}>
-        <Spinner />
-      </div>
-    );
-  }
   return (
-    <Fragment>
-      <div className={classes.center}>
-      {/* {status === "succeeded" && user.status === "succeeded" && (
-        <Navigate to='/dashboard' replace={true} />
-      )} */}
+    <div className={classes.center}>
+      {!user.data && <Navigate to="/login" replace={true} />}
+      {loading && <Spinner />}
+      {status === "succeeded" && user.status === "succeeded" && (
+        <Alert
+          type="success"
+          message="Your profile has been successfully updated."
+        />
+      )}
+
+      {!loading && user.data && (
         <div className={classes.card1}>
           <i className={`${classes.iconDice} fa-solid fa-dice`}></i>
           <h1>Bg4U</h1>
@@ -106,7 +84,6 @@ export const Update = () => {
                   type="text"
                   name="first_name"
                   value={formValues.first_name}
-                  // placeholder={profileDetails.data.first_name}
                   required
                   onChange={handleInputChange}
                 />
@@ -117,7 +94,6 @@ export const Update = () => {
                   type="text"
                   name="last_name"
                   value={formValues.last_name}
-                  // placeholder={profileDetails.data.last_name}
                   required
                   onChange={handleInputChange}
                 />
@@ -138,7 +114,6 @@ export const Update = () => {
                   className={classes.input5}
                   type="text"
                   name="phone"
-                  // placeholder={profileDetails.data.phone}
                   onChange={handleInputChange}
                   value={formValues.phone}
                 />
@@ -150,7 +125,6 @@ export const Update = () => {
                   className={classes.input6}
                   type="text"
                   name="city"
-                  // placeholder={profileDetails.data.city}
                   required
                   onChange={handleInputChange}
                   value={formValues.city}
@@ -163,10 +137,19 @@ export const Update = () => {
                   className={classes.input7}
                   type="text"
                   name="district"
-                  // placeholder={profileDetails.data.district}
                   required
                   onChange={handleInputChange}
                   value={formValues.district}
+                />
+                <label htmlFor="photo">Select a photo URL</label>
+                <input
+                  id="photo"
+                  className={classes.input9}
+                  type="text"
+                  name="photo"
+                  placeholder="Select a photo URL"
+                  onChange={handleInputChange}
+                  value={formValues.photo}
                 />
                 <label htmlFor="games">Select your games</label>
                 <select
@@ -193,20 +176,10 @@ export const Update = () => {
                   <option value="Junta">Junta</option>
                   {/* {gamesDetails.data.map((game, i) => { */}
                   {/* return (
-                     <option key={i} value={game.name}>{game.name}</option>
-                     )
+                    <option key={i} value={game.name}>{game.name}</option>
+                    )
                   })} */}
                 </select>
-                {/* <label htmlFor="photo">Select a photo</label>
-                <input
-                  id="photo"
-                  className={classes.input9}
-                  type="text"
-                  name="photo"
-                  placeholder="Select a photo URL"
-                  onChange={handleInputChange}
-                  value={formValues.photo}
-                /> */}
               </div>
             </div>
             <div className={classes.button}>
@@ -214,7 +187,7 @@ export const Update = () => {
             </div>
           </form>
         </div>
-      </div>
-    </Fragment>
+      )}
+    </div>
   );
 };

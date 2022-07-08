@@ -119,8 +119,6 @@ export const Register = (props) => {;
                   onChange={handleChange}
                   value={data.password}
                 />
-              </div>
-              <div className={classes.column2}>
                 <label htmlFor="phone">Write your phone</label>
                 <input
                   id="phone"
@@ -131,6 +129,8 @@ export const Register = (props) => {;
                   onChange={handleChange}
                   value={data.phone}
                 />
+              </div>
+              <div className={classes.column2}>
                 <label htmlFor="city">Write the name of your city</label>
                 <input
                   id="city"
@@ -154,6 +154,16 @@ export const Register = (props) => {;
                   required
                   onChange={handleChange}
                   value={data.district}
+                />
+                <label htmlFor="photo">Select a photo URL</label>
+                <input
+                  id="photo"
+                  className={classes.input9}
+                  type="text"
+                  name="photo"
+                  placeholder="URL"
+                  onChange={handleChange}
+                  value={data.photo}
                 />
                 <label htmlFor="games">Select your games</label>
                 <select
@@ -186,16 +196,6 @@ export const Register = (props) => {;
                     );
                   })} */}
                 </select>
-                {/* <label htmlFor="photo">Select a photo URL</label>
-                <input
-                  id="photo"
-                  className={classes.input9}
-                  type="text"
-                  name="photo"
-                  placeholder="URL"
-                  onChange={handleChange}
-                  value={data.photo}
-                /> */}
               </div>
             </div>
             <div className={classes.button}>

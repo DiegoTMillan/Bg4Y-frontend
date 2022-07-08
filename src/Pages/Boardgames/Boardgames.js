@@ -41,6 +41,7 @@ export const Boardgames = (props) => {
           {gamesDetails.data.map((game, index) => {
             return (
               <BgCard
+                key={index}
                 photo={game.photo}
                 name={game.name}
                 editorial={game.editorial}
