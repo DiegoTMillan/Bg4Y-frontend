@@ -146,8 +146,8 @@ export const loginSlice = createSlice({
       state.error = action.payload;
     },
     [getFriends.fulfilled]: (state, action) => {
-      console.log(action.payload)
-      state.login.data = action.payload;
+      // console.log(action.payload)
+      state.login.data.data = action.payload;
       state.login.loading = false;
       state.login.isLogged = true;
       state.status = "succeeded";

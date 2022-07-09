@@ -8,12 +8,14 @@ import { Header } from "./Components/header/Header";
 import { Footer } from "./Components/footer/Footer";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { Banner } from "./Components/Banner/Banner";
+import ScrollToTop from "./Components/scrollToTop/ScrollToTop";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+    <ScrollToTop/>
       <Header />
       <App />
       <Footer />

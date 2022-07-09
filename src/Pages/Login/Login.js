@@ -64,6 +64,7 @@ export const Login = (props) => {
               name="email"
               value={data.email}
               placeholder="Email"
+
               onChange={handleChange}
             />
             <label htmlFor="password" className={classes.password}>

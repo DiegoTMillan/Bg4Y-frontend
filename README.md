@@ -61,7 +61,9 @@ React was the choice for the frontend because it was one of the objetives of the
 
 ```
   <Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
+    <ScrollToTop/>
       <Header />
       <App />
       <Footer />

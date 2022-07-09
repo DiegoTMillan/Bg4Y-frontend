@@ -1,0 +1,59 @@
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* opacity: 0;
+    transition: all 0.3 ease-in-out;
+    pointer-events: none;
+}
+.modal.show{
+    opacity:1;
+    pointer-events: visible;
+} */
+}
+.modalContent{
+    width: 30%;
+    background-color: white;
+    font-family: "Raleway";
+}
+.modalHeader, .modalFooter{
+    padding:1em;
+}
+.modalFooter{
+    padding:1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.linkButton a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.linkButton{
+    width: 30%;
+    padding: 8px 4px;
+    border-radius: 5px;
+    background-color:rgb(4, 71, 100);
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    display:flex;
+    justify-content: center;
+}
+.modalBody{
+    font-size:2rem;
+    text-align: center;
+}
+.modalBody{
+    padding:1em;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}

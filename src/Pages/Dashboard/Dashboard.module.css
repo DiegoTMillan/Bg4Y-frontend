@@ -3,13 +3,13 @@
   min-height: 75vh;
   font-family: "Raleway";
   padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* profile card */
 .card1 {
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
+  min-width: 30%;
   padding: 0.3em;
   text-align: center;
   background-color: #faf9fe;

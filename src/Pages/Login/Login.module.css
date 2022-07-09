@@ -3,12 +3,13 @@
     min-height: 70vh;
     font-family: "Raleway";
     padding:2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* login card */
 .card1{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    min-width: 30%;
     margin: auto;
     padding: 1.5em;
     text-align: center;

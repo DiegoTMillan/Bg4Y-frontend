@@ -15,50 +15,49 @@ export const Friends = () => {
   const [usersCard, setUsersCard] = useState();
   const [searchInput, setSearchInput] = useState();
 
+  // useEffect(() => {
+  //   dispatch(getFriends()).then();
+  // }, []);
+
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.login.login.data.data.info[0]);
-  const loading = useSelector((state) => state.login.login.loading);
-  const status = useSelector((state) => state.login.status);
-  console.log(user)
+  const users = useSelector((state) => state.login.login.data.data);
+  // const users = useSelector((state) => state.login.login.data.data.info[0]);
+  // const loading = useSelector((state) => state.login.login.loading);
+  // const status = useSelector((state) => state.login.status);
+  
 
-  // dispatch(getFriends(data)).then()
-  // setUsersDetails(data)
-  // console.log(usersDetails) 
+  // useEffect(()=>{
+  //   dispatch(getFriends(usersDetails)).then()
+  //   setUsersDetails({
+  //     first_name: "",
+  //     last_name: "",
+  //     email: "",
+  //     password: "",
+  //     phone: "",
+  //     city: "",
+  //     district: "",
+  //     role: "user",
+  //     photo: "",
+  //     game_name:[],
+  //   });
+  //   console.log(usersDetails)
+  // },[])
 
-
-
-//   const getInfo = async () => {
-//     await axios
-//       .get("http://127.0.0.1:8000/users/", {
-//         headers: {
-//           authorization: "Bearer " + token,
-//         },
-//       })
-//       .then((response) => {
-//         // setUsersCard(response.data);
-//         setUsersDetails(response.data);
-//         setUsersCard(response.data);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-// }
   // console.log(usersDetails.data)
 
-  const handleChange = (e) => {
-    setSearchInput(e.target.value);
-    filter(e.target.value);
-  };
-  const filter = (text) => {
-    let textResult = usersCard.data.filter((item) => {
-      if (item.game_name.toString().toLowerCase().includes(text.toLowerCase())) {
-        return item;
-      }
-    });
-    setUsersDetails(textResult);
-    console.log(usersDetails)
-  };
-  
+  // const handleChange = (e) => {
+  //   setSearchInput(e.target.value);
+  //   filter(e.target.value);
+  // };
+  // const filter = (text) => {
+  //   let textResult = usersCard.data.filter((item) => {
+  //     if (item.game_name.toString().toLowerCase().includes(text.toLowerCase())) {
+  //       return item;
+  //     }
+  //   });
+  //   setUsersDetails(textResult);
+  //   console.log(usersDetails)
+  // };
 
   // useEffect(() => {
   //   fetch("http://127.0.0.1:8000/users/", {
@@ -88,7 +87,7 @@ export const Friends = () => {
   //   getInfo();
   // }, []);
 
-  if (!usersDetails) {
+  if (!users) {
     return (
       <div className={classes.spinner}>
         <Spinner />
@@ -98,7 +97,7 @@ export const Friends = () => {
   return (
     <Fragment>
       <h1 className={classes.friends}>Check out your friends</h1>
-      <form className={classes.formInput}>
+      {/* <form className={classes.formInput}>
         <input
           className={classes.inputControl}
           value={searchInput}
@@ -110,9 +109,9 @@ export const Friends = () => {
         <button className={classes.inputButton}>
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
-      </form>
+      </form> */}
       <div ref={searchInputRef} className={classes.bigContainer}>
-        {usersDetails.data?.map((user, index) => {
+        {users.data.map((user, index) => {
           return (
             <div className={classes.container}>
               <CardFriend

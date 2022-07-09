@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../../Components/store/loginSlice";
 import { Navigate } from "react-router-dom";
 import { Alert } from "../../Components/alert/Alert";
+import { Modal } from "../../Components/modal/Modal";
 
 export const Update = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
+  const [show, setShow] = useState();
 
   const [formValues, setFormValues] = useState(
     (user.data && {
@@ -42,7 +44,6 @@ export const Update = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     dispatch(updateProfile(formValues)).then((result) => {
-      console.log(result);
       setFormValues({
         _id: result.payload.data._id,
         first_name: result.payload.data.first_name,
@@ -55,17 +56,49 @@ export const Update = () => {
         photo: result.payload.data.district,
         game_name: [],
       });
+      //EXPERIMENTO
+      // dispatch((data)).then((result) => {
+      //   setData({
+      //     _id: result.payload.data._id,
+      //     first_name: result.payload.data.first_name,
+      //     last_name: result.payload.data.last_name,
+      //     password: result.payload.data.password,
+      //     phone: result.payload.data.phone,
+      //     city: result.payload.data.city,
+      //     district: result.payload.data.district,
+      //     role: "user",
+      //     photo: result.payload.data.district,
+      //     game_name: [],
+      //   });
+      // });
+      //EXPERIMENTO
     });
   };
 
+  //EXPERIMENTO
+
+  // const [data, setData] = useState({
+  //   first_name: "",
+  //   last_name: "",
+  //   email: "",
+  //   password: "",
+  //   phone: "",
+  //   city: "",
+  //   district: "",
+  //   role: "user",
+  //   photo: "",
+  //   game_name: [],
+  // });
   return (
     <div className={classes.center}>
       {!user.data && <Navigate to="/login" replace={true} />}
       {loading && <Spinner />}
       {status === "succeeded" && user.status === "succeeded" && (
-        <Alert
-          type="success"
-          message="Your profile has been successfully updated."
+        <Modal 
+        // show={show}
+        text="Great! Your profile has been updated!"
+        route="/dashboard"
+        link="Done"
         />
       )}
 

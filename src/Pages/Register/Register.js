@@ -5,6 +5,7 @@ import { Spinner } from "../../Components/spinner/Spinner";
 import {Alert} from "../../Components/alert/Alert"
 import classes from "./Register.module.css";
 import { useState } from "react";
+import { Modal } from "../../Components/modal/Modal";
 
 export const Register = (props) => {;
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export const Register = (props) => {;
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const error = useSelector((state) => state.login.error);
+  const [show, setShow] = useState(true)
 
   const [data, setData] = useState({
     first_name: "",
@@ -53,19 +55,30 @@ export const Register = (props) => {;
       setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     }
   };
+  console.log(show)
 
   return (
     <div className={classes.center}>
       {loading && <Spinner />}
       {status === "succeeded" &&
         user.status === "failed" && (
-        // props.type === "Register" && (
-          <Alert type="error" message="Sorry, something wrong has happened, please try again in a few minutes" />
+          <Modal 
+        show={show}
+        text="Oops! Something was wrong"
+        route="/"
+        link="I understand"
+          />
         )}
       {status === "succeeded" &&
         user.status === "succeeded" && (
-          <Alert type="success" message="You have been successfully registered. Now yo can login and enjoy!" />
+          // <Alert type="success" message="You have been successfully registered. Now you can login and enjoy!" />
           // <Navigate to="/dashboard" replace />
+          <Modal 
+        show={show}
+        text="Great! You are now registered!"
+        route="/"
+        link="Done"
+          />
         )}
       {!loading && (
         <div className={classes.card1}>
