@@ -37,13 +37,13 @@ npm install
  3. ### Adding tools
 
 
-Now we have to install redux, , @reduxjs/toolkit, axios and router-dom
+Now we have to install redux, @reduxjs/toolkit and router-dom
 
 ```
-npm install react-redux @reduxjs/toolkit axios  react-router-dom
+npm install react-redux @reduxjs/toolkit  react-router-dom
 ```
 
-4. ### Make it function
+1. ### Make it function
 
 And now if you want to see it in the screen:
 
