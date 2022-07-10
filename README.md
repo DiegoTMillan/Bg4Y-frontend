@@ -1,7 +1,7 @@
 # Bg4Y-backend :computer:
 Boardgames 4 you Frontend.\
 This is only the front of a bigger project. Here is the URL of the other repository:
-  ### Bg4Y-frontend
+  ### Bg4Y-backend
   ```
   https://github.com/DiegoTMillan/Bg4Y-backend.git
   ```
@@ -70,6 +70,8 @@ React was the choice for the frontend because it was one of the objetives of the
     </BrowserRouter>
   </Provider>
 ```
+I decided to include the ScrollToTop component because the Link redirection always rendered in the middle of the page.
+
   2. ### Breakpoints
 
 in this project, we had to use at least three differents breakpoints. Almost we were required to use only three, indeed, in my components i have used 4 or even more.
