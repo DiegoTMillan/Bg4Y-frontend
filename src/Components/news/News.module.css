@@ -12,7 +12,7 @@
 .container div {
     border-top: 1px solid grey;
     border-bottom:1px solid grey;
-    background-color: #faf9fe;
+    background-color: var(--back);
     padding:1em;
     margin:auto;
 }
@@ -25,7 +25,7 @@
 }
 .link{
     text-decoration: None;
-    color: darkred;
+    color: var(--red-titles);
     font-size: 3.5rem;
     width: 100%;
 }

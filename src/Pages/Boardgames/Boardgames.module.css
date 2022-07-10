@@ -9,7 +9,7 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-  color: rgb(4, 71, 100);
+  color: var(--base);
   background-color: white;
   opacity: 0.8;
   margin: auto;

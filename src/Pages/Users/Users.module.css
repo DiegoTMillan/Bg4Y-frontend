@@ -10,7 +10,7 @@
   text-align: center;
   align-items: center;
   padding: 1em;
-  color: rgb(4, 71, 100);
+  color: var(--base);
   background-color: white;
   opacity: .8;
   margin:2em 0em;

@@ -212,7 +212,7 @@ export const Register = (props) => {;
               </div>
             </div>
             <div className={classes.button}>
-              <button type="submit">Sign in</button>
+              <button type="submit">Sign up</button>
             </div>
           </form>
         </div>

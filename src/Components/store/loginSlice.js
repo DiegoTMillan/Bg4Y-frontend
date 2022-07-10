@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
+import Auth from "../Auth/Auth";
 
 const loginURL = "http://127.0.0.1:8000/login";
 const userURL = "http://127.0.0.1:8000/users";
@@ -13,6 +14,7 @@ const defaultData = {
   loading: false,
   isLogged: false,
 };
+
 
 export const addNewUser = createAsyncThunk(
   "login/addNewUser",
@@ -58,9 +60,7 @@ export const updateProfile = createAsyncThunk(
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
-          // authorization:
-          //   "Bearer " +
-          //   "",
+          // "authorization": "Bearer: "  + Auth()
         },
       });
       return response.json();

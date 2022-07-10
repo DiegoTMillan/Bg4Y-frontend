@@ -17,7 +17,7 @@ footer {
   align-self: flex-end;
   align-items: center;
   justify-content: center;
-  background-color: #faf9fe;
+  background-color: var(--back);
   width: 100%;
   box-shadow: 0 -2px 7px 2px rgb(200, 196, 196);
 }
@@ -44,7 +44,7 @@ footer {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
-  color: rgb(4, 71, 100);
+  color: var(--base);
   font-weight: bold;
   font-family: "Lobster";
   margin-right: 2em;
@@ -80,11 +80,11 @@ footer {
   font-size:1.5rem
 }
 .brush {
-  color: rgb(4, 71, 100);
+  color: var(--base);
   padding: 0em 0.4em;
 }
 .personalLink {
-  color:rgb(4, 71, 100)
+  color:var(--base)
 }
 
 /* items that do not appear in some breakpoints */
@@ -130,12 +130,12 @@ footer {
   .group1 a {
     text-decoration: none;
     padding: 0.4em;
-    color:rgb(4, 71, 100);
+    color:var(--base);
   }
   .group2 a {
     text-decoration: none;
     padding: 0.4em;
-    color:rgb(4, 71, 100);
+    color:var(--base);
   }
 }
 
@@ -172,7 +172,7 @@ footer {
     font-size:1.6rem;
   }
   .declaration h3 {
-    color:rgb(4, 71, 100);
+    color:var(--base);
   }
   .heartIcon {
     color: red;
@@ -182,7 +182,7 @@ footer {
   .declaration p {
     font-size: 1.5rem;
     text-align: center;
-    color:rgb(4, 71, 100);
+    color:var(--base);
   }
   /* added some scale transform for icons */
   .socialMedia div:hover {

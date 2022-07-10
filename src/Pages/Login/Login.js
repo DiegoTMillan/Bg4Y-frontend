@@ -80,9 +80,9 @@ export const Login = (props) => {
               value={data.password}
             />
             <div className={classes.registeredLog}>
-              <p>¿Are you not registered?</p>
+              <p>Are you new around here?</p>
               <Link className={classes.link} to="/register">
-                Click here
+                Sign up!
               </Link>
             </div>
             <div className={classes.button}>

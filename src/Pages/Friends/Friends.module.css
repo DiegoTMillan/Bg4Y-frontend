@@ -19,7 +19,7 @@
   font-size: 2rem;
   padding: .2em;
   margin-left: .4em;
-  background-color: rgb(4, 71, 100);
+  background-color: var(--base);
   border-radius: 5px;
 }
 
@@ -30,9 +30,9 @@
   align-items: center;
   vertical-align: center;
   padding: 1em;
-  color: rgb(4, 71, 100);
+  color: var(--base);
   margin: 2em 0em;
-  background-color: white;
+  background-color: var(--back);
   opacity: .8;
 }
 @media (min-width: 768px) {

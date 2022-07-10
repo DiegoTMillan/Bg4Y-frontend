@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #faf9fe;
+  background-color: var(--back);
   padding: 1em;
   box-shadow: 0 2px 7px 2px rgb(200, 196, 196);
   font-family: "Raleway";
@@ -21,19 +21,19 @@
 .loginNav {
   display: flex;
   font-size: 4rem;
-  color: rgb(4, 71, 100);
+  color: var(--base);
 }
 .logos{
   display: flex;
   flex-direction: column;
   font-size: 4rem;
-  color: rgb(4, 71, 100);
+  color: var(--base);
   text-align: center;
   padding-top: .2em;
 }
 .logos a {
   text-decoration: none;
-  color: rgb(4, 71, 100);
+  color: var(--base);
   font-family: "Lobster";
   font-size: 2.5rem;
   font-weight: bold;
@@ -47,7 +47,7 @@
 .optionalNav {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(4, 71, 100);
+  background-color: var(--base);
   padding: 1em;
   border-bottom: 3px solid grey;
   border-top: 3px solid grey;
@@ -93,7 +93,7 @@
     }
     .loginNav:hover{
         transform: scale(1.2);
-        color: rgb(3, 57, 80);
+        color: var(--base-hover);
         transition: all 0.3s ease;
     }
   }

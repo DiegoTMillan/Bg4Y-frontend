@@ -7,14 +7,13 @@
   margin: auto;
   padding: 0.3em;
   text-align: center;
-  background-color: #faf9fe;
+  background-color: var(--back);
   border-radius: 5px;
   box-shadow: 3px 3px 5px grey;
 }
 .card1 h1 {
   font-family: "Lobster";
-  text-align: center;
-  color: darkred;
+  color: var(--red-titles);
   margin-bottom: .5em;
 }
 .photo {
@@ -41,7 +40,7 @@
   padding: 1em;
 }
 .column1 div i {
-  color: #2274a5;
+  color: var(--little-icons);
   font-size: 1.8rem;
   margin-bottom: 0.5em;
 }
@@ -58,7 +57,7 @@
   padding: 1em;
 }
 .column2 div i {
-  color: #2274a5;
+  color: var(--little-icons);
   font-size: 1.8rem;
   margin-bottom: 0.5em;
 }

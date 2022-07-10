@@ -10,6 +10,25 @@
 }
 :root {
   font-size: 0.785rem;
+  --purple: hsla(278, 100%, 36%, 1);
+  --french-violet: hsla(263, 60%, 48%, 1);
+  --slate-blue: hsla(239, 53%, 59%, 1);
+  --united-nations-blue: hsla(213, 64%, 59%, 1);
+  --carolina-blue: hsla(203, 69%, 59%, 1);
+  --cyan-process: hsla(194, 73%, 59%, 1);
+  --sky-blue-crayola: hsla(188, 70%, 61%, 1);
+  --medium-turquoise: hsla(180, 66%, 63%, 1);
+  --turquoise: hsla(171, 80%, 69%, 1);
+  --aquamarine: hsla(163, 100%, 75%, 1);
+  /* Most used colors */
+  --back: #faf9fe;
+  --base: rgb(4, 71, 100);
+  --base-hover: rgb(3, 57, 80);
+  --red-titles: darkred;
+  --little-icons:  #2274a5;
+
+
+
 }
 .spinner {
   height: 100vh;

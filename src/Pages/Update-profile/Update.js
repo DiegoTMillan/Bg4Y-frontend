@@ -52,8 +52,8 @@ export const Update = () => {
         phone: result.payload.data.phone,
         city: result.payload.data.city,
         district: result.payload.data.district,
+        photo: result.payload.data.photo,
         role: "user",
-        photo: result.payload.data.district,
         game_name: [],
       });
       //EXPERIMENTO

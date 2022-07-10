@@ -2,9 +2,9 @@ import classes from "./Modal.module.css"
 import { Link } from "react-router-dom"
 
 export const Modal = (props) =>{
-    // if(!props.show){
-    //     return null
-    // }
+    if(!props.show){
+        return null
+    }
 
     return(
         <div className={`${classes.modal}`} onClick={props.onClose}>

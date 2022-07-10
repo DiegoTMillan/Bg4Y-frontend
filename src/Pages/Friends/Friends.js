@@ -4,7 +4,6 @@ import { CardFriend } from "../../Components/CardFriend/CardFriend";
 import classes from "./Friends.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getFriends } from "../../Components/store/loginSlice";
-// import axios from "axios";
 
 export const Friends = () => {
   // const user = useSelector((state) => state.login.login.data.data.info[0]);
@@ -24,6 +23,7 @@ export const Friends = () => {
   // const users = useSelector((state) => state.login.login.data.data.info[0]);
   // const loading = useSelector((state) => state.login.login.loading);
   // const status = useSelector((state) => state.login.status);
+  console.log(users)
   
 
   // useEffect(()=>{
@@ -45,43 +45,20 @@ export const Friends = () => {
 
   // console.log(usersDetails.data)
 
-  // const handleChange = (e) => {
-  //   setSearchInput(e.target.value);
-  //   filter(e.target.value);
-  // };
-  // const filter = (text) => {
-  //   let textResult = usersCard.data.filter((item) => {
-  //     if (item.game_name.toString().toLowerCase().includes(text.toLowerCase())) {
-  //       return item;
-  //     }
-  //   });
-  //   setUsersDetails(textResult);
-  //   console.log(usersDetails)
-  // };
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+    filter(e.target.value);
+  };
+  const filter = (text) => {
+    let textResult = usersCard.data.filter((item) => {
+      if (item.game_name.toString().toLowerCase().includes(text.toLowerCase())) {
+        return item;
+      }
+    });
+    setUsersDetails(textResult);
+    console.log(usersDetails)
+  };
 
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:8000/users/", {
-  //     headers: {
-  //       'authorization': 'Bearer ' + token,
-  //       'Content-Type': 'application/json'
-  //     }
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setUsersDetails(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
-
-  // function handleChange(e) {
-  //   e.preventDefault();
-
-  //   setSearchInput(() =>
-  //     searchInputRef.current.value
-  //       ? usersDetails.filter((text) =>
-  //           text.email.toLowerCase().includes(searchInputRef.current.value)
-  //         )
-  //       : []
-  //   );
-  // }
 
   // useEffect(() => {
   //   getInfo();

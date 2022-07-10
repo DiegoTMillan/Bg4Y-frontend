@@ -6,7 +6,7 @@
   margin: auto;
   padding: 0.3em;
   text-align: center;
-  background-color: #faf9fe;
+  background-color: var(--back);
   border-radius: 5px;
   box-shadow: 3px 3px 5px grey;
 }
@@ -16,12 +16,12 @@
 .card1 .iconDice {
   text-align: center;
   font-size: 3.5em;
-  color: rgb(4, 71, 100);
+  color: var(--base);
 }
 .card1 h1 {
   font-family: "Lobster";
   text-align: center;
-  color: rgb(4, 71, 100);
+  color: var(--base);
 }
 .photo {
   margin: auto;
@@ -32,7 +32,7 @@
   margin:auto;
 }
 .titleName h1{
-  color: darkred;
+  color: var(--red-titles);
 }
 .columns {
   display: flex;
@@ -50,7 +50,7 @@
   padding: 1em;
 }
 .column1 div i {
-  color: #2274a5;
+  color: var(--little-icons);
   font-size: 1.8rem;
   margin-bottom: .5em;
 }
@@ -67,7 +67,7 @@
   padding: 1em;
 }
 .column2 div i {
-  color: #2274a5;
+  color: var(--little-icons);
   font-size: 1.8rem;
   margin-bottom: .5em;
 }
@@ -81,14 +81,14 @@
   border-bottom: 1px solid grey;
 }
 .games i {
-  color: #2274a5;
+  color: var(--little-icons);
   font-size: 1.8rem;
   padding-bottom: 0.5em;
 }
 .games p {
   font-size: 1.5rem;
   font-weight: bold;
-  color: darkred;
+  color: var(--red-titles);
 }
 .buttons {
   padding: 1.5em;
@@ -103,7 +103,7 @@
   margin: 0.5em;
   padding: 10px 5px;
   border-radius: 6px;
-  background-color: rgb(4, 71, 100);
+  background-color: var(--base);
   font-size: 1.2rem;
   font-weight: bold;
 }

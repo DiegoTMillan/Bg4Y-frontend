@@ -8,7 +8,9 @@ import { loginActions } from "../../Components/store/loginSlice";
 
 export const Dashboard = () => {
   const user = useSelector((state) => state.login.login.data.data.info[0]);
+  const token = useSelector((state) => state.login.login.data.data.token)
   const loading = useSelector((state) => state.login.login.loading);
+  console.log(token)
 
   const dispatch = useDispatch();
   const handleLogOut = () => {
