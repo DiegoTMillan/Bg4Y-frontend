@@ -23,15 +23,16 @@
   font-size: 4rem;
   color: var(--base);
 }
-.logos{
+.logos1{
   display: flex;
   flex-direction: column;
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--base);
   text-align: center;
   padding-top: .2em;
+  padding-left: 2em;
 }
-.logos a {
+.logos1 a {
   text-decoration: none;
   color: var(--base);
   font-family: "Lobster";
@@ -39,12 +40,32 @@
   font-weight: bold;
   padding-top: .3em;
 }
-.logos a:hover{
+.logos1 a:hover{
+  transform: scale(1.2);
+  transition: all ease-in-out .5s;
+}
+.logos2{
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  color: var(--base);
+  text-align: center;
+  padding-top: .2em;
+}
+.logos2 a {
+  text-decoration: none;
+  color: var(--base);
+  font-family: "Lobster";
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-top: .3em;
+}
+.logos2 a:hover{
   transform: scale(1.2);
   transition: all ease-in-out .5s;
 }
 .rightIcons{
-  min-width: 30%;
+  min-width: 20%;
   display: flex;
   justify-content: space-around;
   align-items: center;

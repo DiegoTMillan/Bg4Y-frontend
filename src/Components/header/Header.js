@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { loginActions } from "../store/loginSlice";
-import { Fragment } from "react";
 
 export const Header = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const user = useSelector((state) => state.login.login.data);
   const isLogged = useSelector((state) => state.login.login.isLogged);
   const handleLogOut = () => {
@@ -17,26 +16,29 @@ export const Header = () => {
     <header>
       <div className={classes.container}>
         {/* logo */}
-        <div className={classes.rightIcons}>
-        <div className={classes.logos}>
+        <div className={classes.logos1}>
           <i className={`${classes.logo} fa-solid fa-dice`}></i>
-          <Link to="/">Bg4U</Link>
+          <Link to="/">Boardgames 4 you</Link>
+        </div>
+        {/* Navigation menu */}
+        <div className={classes.menuNav}>
+          <Link to="/boardgames">Boardgames</Link>
+          <Link to="/new1">Last news</Link>
+          <Link to="/review1">Last review</Link>
         </div>
         {isLogged && user.status === "succeeded" && (
-          <Fragment>
-            <div className={classes.logos}>
+          <div className={classes.rightIcons}>
+            <div className={classes.logos2}>
               <i className={`${classes.logo} fa-solid fa-address-card`}></i>
               <Link to="/dashboard">Profile</Link>
             </div>
-            <div className={classes.logos}>
-              <i
-                className={`${classes.logo} fa-solid fa-right-from-bracket`}
-              ></i>
+            <div className={classes.logos2}>
+              <i className={`${classes.logo} fa-solid fa-right-from-bracket`}></i>
               <Link onClick={handleLogOut} to={"/login"}>
                 Logout
               </Link>
             </div>
-          </Fragment>
+          </div>
         )}
         {!isLogged ||
           (isLogged && user.status === "failed" && (
@@ -50,7 +52,8 @@ export const Header = () => {
               ></i>
             </div>
           ))}
-        {!isLogged && user.status === undefined && (
+        {
+          (!isLogged && user.status === undefined && (
             <div
               // login button
               className={classes.loginNav}
@@ -60,14 +63,7 @@ export const Header = () => {
                 className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
               ></i>
             </div>
-        )}
-        </div>
-        {/* Navigation menu */}
-        <div className={classes.menuNav}>
-          <Link to="/boardgames">Boardgames</Link>
-          <Link to="/new1">Last news</Link>
-          <Link to="/review1">Last review</Link>
-        </div>
+          ))}
         {/* <div
           // login button
           className={classes.loginNav}
