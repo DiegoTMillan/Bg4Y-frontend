@@ -100,7 +100,7 @@ export const Update = () => {
       {status === "succeeded" && user.status === "succeeded" && updated && (
         <Modal
           // show={show}
-          text="Your profile has been correctly updated"
+          text="Profile updated successfully "
           route="/dashboard"
           link="Done"
         />

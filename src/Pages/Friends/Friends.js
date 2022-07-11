@@ -6,9 +6,6 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 export const Friends = () => {
-  // const user = useSelector((state) => state.login.login.data.data.info[0]);
-  //   db.users.find({"game_name":{$in:["Maracaibo", "K2"]}}, {"first_name":1, "last_name":1, "phone":1, "city":1, "district":1, "game_name":1, "photo":1, "_id":0})
-  // const token = useSelector((state) => state.login.login.data.data?.token)
   const [usersDetails, setUsersDetails] = useState();
   const [usersCard, setUsersCard] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -70,8 +67,7 @@ export const Friends = () => {
         <input
           className={classes.inputControl}
           value={searchInput}
-          placeholder="Search by boardgames or cities"
-          // type="search"
+          placeholder="Search by boardgame or city"
           onChange={handleChange}
         />
         <button className={classes.inputButton}>

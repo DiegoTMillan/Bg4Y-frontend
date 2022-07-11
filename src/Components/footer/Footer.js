@@ -75,8 +75,7 @@ export const Footer = () => {
           <h3>Boardgames 4 you</h3>
           <i className={`${classes.heartIcon} fa-solid fa-heart fa-beat`} />
           <p>
-            This project was born with the aim of uniting all board game lovers
-            around the world.
+          This project was born with the aim of connecting all boardgame lovers in the world.
           </p>
         </div>
       </div>

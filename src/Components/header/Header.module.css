@@ -22,6 +22,7 @@
   display: flex;
   font-size: 4rem;
   color: var(--base);
+  margin-right: 1em;
 }
 .logos1{
   display: flex;
@@ -30,7 +31,7 @@
   color: var(--base);
   text-align: center;
   padding-top: .2em;
-  padding-left: 2em;
+  padding-left: .5em;
 }
 .logos1 a {
   text-decoration: none;
@@ -45,6 +46,7 @@
   transition: all ease-in-out .5s;
 }
 .logos2{
+  min-width: 15%;
   display: flex;
   flex-direction: column;
   font-size: 3rem;
@@ -58,7 +60,7 @@
   font-family: "Lobster";
   font-size: 2.5rem;
   font-weight: bold;
-  padding-top: .3em;
+  padding: 0em 0.5em;
 }
 .logos2 a:hover{
   transform: scale(1.2);
@@ -90,7 +92,7 @@
 /* breakpoints*/
 
 /* 768px */
-@media (min-width: 768px) {
+@media (min-width: 830px) {
   .logoNav {
     font-size: 3rem;
   }

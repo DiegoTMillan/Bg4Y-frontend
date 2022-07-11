@@ -46,9 +46,9 @@ export const Login = (props) => {
         // props.type === "Register" && (
         <Modal
         // show={show}
-        text="The user email or password is not correct"
+        text="Sorry, email or password are wrong"
         route="/"
-        link="Done"
+        link="try again"
         />
       )}
       {status === "succeeded" && user.status === "succeeded" && (

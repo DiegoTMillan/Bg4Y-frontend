@@ -14,14 +14,13 @@ export const Home = () => {
           <div className={classes.divTitle}>
             <h1 className={classes.newsTitle}>News</h1>
           </div>
-          
-          <News
+            <News
             url="https://images.pexels.com/photos/8111367/pexels-photo-8111367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            text="All the latest news about Essen 2022"
+            text="All the lattest news about Essen 2022"
             author="Diego Tapia"
             date="27/06/22"
             link="/new1"
-          />
+            />
           <News
             url="https://images.pexels.com/photos/8111328/pexels-photo-8111328.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8111328.jpg&fm=jpg"
             text="Abstract games, are they here to stay?"

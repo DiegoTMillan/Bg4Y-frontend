@@ -1,0 +1,187 @@
+.container {
+    width: 100vw;
+    min-height: 75vh;
+    font-family: "Raleway";
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* profile card */
+  .card1 {
+    min-width: 30%;
+    padding: 0.3em;
+    text-align: center;
+    background-color: var(--back);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px grey;
+  }
+  .titleName h1{
+    color: var(--red-titles);
+  }
+  .icons{
+    display: flex;
+    padding: 1.5em;
+    justify-content: space-around;
+  }
+  .card1 .iconDice {
+    text-align: center;
+    font-size: 3.5em;
+    color: var(--base);
+  }
+  .modLogo {
+    color:var(--base);
+    font-family: "Lobster";
+    text-align: center;
+  }
+  .modLogo:hover{
+    transform: scale(1.3);
+    color:var(--base);
+    transition: all ease-in-out .5s;
+  }
+  .iconTools{
+    font-size: 3.5em;
+  }
+  .logo h1 {
+    font-family: "Lobster";
+    text-align: center;
+    color: var(--base);
+  }
+  .photo {
+    margin: auto;
+  }
+  .img {
+    width: 13em;
+    height: 16em;
+    border-radius: 50%;
+  }
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em;
+  }
+  .column1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5em;
+  }
+  .column1 div {
+    display: flex;
+    padding: 1em;
+  }
+  .column1 div i {
+    color: var(--little-icons);
+    font-size: 1.8rem;
+    padding-right: 0.5em;
+  }
+  .column1 div p {
+    font-size: 1.5rem;
+  }
+  .column2 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5em;
+  }
+  .column2 div {
+    display: flex;
+    padding: 1em;
+  }
+  .column2 div i {
+    color: var(--little-icons);
+    font-size: 1.8rem;
+    padding-right: 0.5em;
+  }
+  .column2 div p {
+    font-size: 1.5rem;
+  }
+  .games {
+    width: 75%;
+    margin: auto;
+    padding-bottom: 2em;
+    border-bottom: 1px solid grey;
+  }
+  .games i {
+    color: var(--little-icons);
+    font-size: 1.8rem;
+    padding-bottom: 0.5em;
+  }
+  .games p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: darkred;
+  }
+  .buttons {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: wrap;
+  }
+  .buttons .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    width: 40%;
+    max-width: 45%;
+    margin: .5em;
+    padding: 10px 5px;
+    border-radius: 6px;
+    background-color: var(--base);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .linkText{
+    text-decoration: none;
+    color: white;
+  }
+  .linkText1 {
+    text-decoration: none;
+    color:var(--base);
+  }
+  .linkText1:hover{
+    color:var(--base-hover);
+    transition: all ease-in-out .5s;
+  }
+  
+  /* breakpoints */
+  @media (min-width: 565px) {
+    .img {
+      height: 20em;
+      width: 17em;
+    }
+    .card1{
+      max-width: 65%;
+    }
+  }
+  @media (min-width: 768px) {
+    .card1 {
+      max-width: 60%;
+    }
+    .column1 {
+      margin-right: 0.5em;
+    }
+    .column2 {
+      margin-left: 0.5em;
+    }
+    .img {
+      height: 21em;
+      width: 19em;
+    }
+  }
+  @media (min-width: 992px) {
+    .card1 {
+      max-width: 50%;
+    }
+    .buttons button {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .card1 {
+      max-width: 40%;
+    }
+    .link:hover {
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  

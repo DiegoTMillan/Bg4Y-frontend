@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import classes from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 export const Card = (props) => {
   return (
@@ -32,8 +33,7 @@ export const Card = (props) => {
               </div>
               <div className={classes.column2}>
                 <div className={classes.city}>
-                  <i className={"fa-solid fa-city"}></i>{" "}
-                  <p>{props.city}</p>
+                  <i className={"fa-solid fa-city"}></i> <p>{props.city}</p>
                 </div>
                 <div className={classes.district}>
                   <i className={"fa-solid fa-earth-oceania"}></i>
@@ -47,9 +47,6 @@ export const Card = (props) => {
             <p>{props.game_name}</p>
           </div>
           <div className={classes.buttons}>
-            <div className={classes.link}>
-              <button className={classes.linkText}>Delete</button>
-            </div>
           </div>
         </div>
       </div>

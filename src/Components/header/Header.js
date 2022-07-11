@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { loginActions } from "../store/loginSlice";
 
 export const Header = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
   const isLogged = useSelector((state) => state.login.login.isLogged);
   const handleLogOut = () => {
@@ -18,7 +18,7 @@ export const Header = () => {
         {/* logo */}
         <div className={classes.logos1}>
           <i className={`${classes.logo} fa-solid fa-dice`}></i>
-          <Link to="/">Boardgames 4 you</Link>
+          <Link to="/">Bg4U</Link>
         </div>
         {/* Navigation menu */}
         <div className={classes.menuNav}>
@@ -33,7 +33,9 @@ export const Header = () => {
               <Link to="/dashboard">Profile</Link>
             </div>
             <div className={classes.logos2}>
-              <i className={`${classes.logo} fa-solid fa-right-from-bracket`}></i>
+              <i
+                className={`${classes.logo} fa-solid fa-right-from-bracket`}
+              ></i>
               <Link onClick={handleLogOut} to={"/login"}>
                 Logout
               </Link>
@@ -42,28 +44,27 @@ export const Header = () => {
         )}
         {!isLogged ||
           (isLogged && user.status === "failed" && (
-            <div
-              // login button
-              className={classes.loginNav}
-              onClick={(event) => (window.location.href = "/login")}
-            >
-              <i
-                className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
-              ></i>
-            </div>
+              <div
+                // login button
+                className={classes.loginNav}
+                onClick={(event) => (window.location.href = "/login")}
+              >
+                <i
+                  className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
+                ></i>
+              </div>
           ))}
-        {
-          (!isLogged && user.status === undefined && (
-            <div
-              // login button
-              className={classes.loginNav}
-              onClick={(event) => (window.location.href = "/login")}
-            >
-              <i
-                className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
-              ></i>
-            </div>
-          ))}
+        {!isLogged && user.status === undefined && (
+          <div
+            // login button
+            className={classes.loginNav}
+            onClick={(event) => (window.location.href = "/login")}
+          >
+            <i
+              className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
+            ></i>
+          </div>
+        )}
         {/* <div
           // login button
           className={classes.loginNav}
