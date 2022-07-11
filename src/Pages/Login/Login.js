@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import classes from "./Login.module.css";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import { Modal } from "../../Components/modal/Modal";
 
 export const Login = (props) => {
 
@@ -15,6 +16,7 @@ export const Login = (props) => {
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const error = useSelector((state) => state.login.error);
+  const [show, setShow] = useState(true)
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -42,9 +44,15 @@ export const Login = (props) => {
       {loading && <Spinner />}
       {status === "succeeded" && user.status === "failed" && (
         // props.type === "Register" && (
-        <Alert
-          type="error"
-          message="Sorry, something wrong has happened, please try again in a few minutes"
+        // <Alert
+        //   type="error"
+        //   message="Sorry, something wrong has happened, please try again in a few minutes"
+        // />
+        <Modal
+        // show={show}
+        text="The user email or password is not correct"
+        route="/"
+        link="Done"
         />
       )}
       {status === "succeeded" && user.status === "succeeded" && (

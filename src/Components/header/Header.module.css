@@ -2,7 +2,7 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: var(--back);
   padding: 1em;
   box-shadow: 0 2px 7px 2px rgb(200, 196, 196);
@@ -42,6 +42,11 @@
 .logos a:hover{
   transform: scale(1.2);
   transition: all ease-in-out .5s;
+}
+.rightIcons{
+  min-width: 30%;
+  display: flex;
+  justify-content: space-around;
 }
 /* these items only is visible under 565px */
 .optionalNav {

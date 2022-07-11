@@ -12,7 +12,9 @@ export const Update = () => {
   const user = useSelector((state) => state.login.login.data);
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
-  const [show, setShow] = useState();
+  const [updated, setUpdated] = useState(false);
+  const token = useSelector((state) => state.login.login.data.data.token)
+  console.log(token)
 
   const [formValues, setFormValues] = useState(
     (user.data && {
@@ -26,6 +28,7 @@ export const Update = () => {
       photo: user.data.info[0].photo,
       role: "user",
       game_name: [],
+      token: token,
     }) ||
       {}
   );
@@ -56,6 +59,7 @@ export const Update = () => {
         role: "user",
         game_name: [],
       });
+      setUpdated(true);
       //EXPERIMENTO
       // dispatch((data)).then((result) => {
       //   setData({
@@ -93,13 +97,8 @@ export const Update = () => {
     <div className={classes.center}>
       {!user.data && <Navigate to="/login" replace={true} />}
       {loading && <Spinner />}
-      {status === "succeeded" && user.status === "succeeded" && (
-        <Modal 
-        // show={show}
-        text="Great! Your profile has been updated!"
-        route="/dashboard"
-        link="Done"
-        />
+      {status === "succeeded" && user.status === "succeeded" && updated && (
+        <Alert message="Great! Your profile has been updated!" type="success" />
       )}
 
       {!loading && user.data && (

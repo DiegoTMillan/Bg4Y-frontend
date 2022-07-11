@@ -13,8 +13,8 @@ const defaultData = {
   },
   loading: false,
   isLogged: false,
+  updated: false,
 };
-
 
 export const addNewUser = createAsyncThunk(
   "login/addNewUser",
@@ -60,8 +60,9 @@ export const updateProfile = createAsyncThunk(
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
-          // "authorization": "Bearer: "  + Auth()
+          "authorization": "Bearer: "  + data.token
         },
+        
       });
       return response.json();
     } catch (error) {
@@ -95,6 +96,11 @@ export const loginSlice = createSlice({
   reducers: {
     logOut: (state) => {
       state.login = defaultData;
+    },
+    resetUpdate: (state) => {
+      console.log(state.login.updated);
+      state.login.updated = false;
+      console.log(state.login.updated);
     },
   },
   extraReducers: {
@@ -136,8 +142,11 @@ export const loginSlice = createSlice({
       // console.log(state.login.data);
       // console.log(action);
       // state.login.data = { ...state.login.data, info };
-      state.login.data.info = action.payload.data;
+      console.log(action)
+      
+      state.login.data.info = [action.payload.data];
       state.login.loading = false;
+      state.login.updated = true;
       state.status = "succeeded";
     },
     [updateProfile.rejected]: (state, action) => {

@@ -53,11 +53,12 @@ label{
     margin-top: 1em;
     margin-bottom: 1em;
     text-align:left;
-    font-size: 1.5rem;
+    /* font-size: 1.8rem; */
 }
 input{
     padding: 12px 25px;
-    border-radius: 5px,
+    border-radius: 5px;
+    font-size: 1.3rem;
 }
 select{
     text-align: center;
@@ -82,14 +83,17 @@ select{
 }
 
 /* breakpoints */
-@media (max-width: 630px){
+@media (max-width: 681px){
     .columns{
         flex-direction: column;
+    }
+    .card1{
+        max-width:85%
     }
 }
 @media (min-width: 768px) {
     .card1{
-        max-width: 80%;
+        max-width: 95%;
     }
     .column1{
         margin-right:.5em;
@@ -99,13 +103,13 @@ select{
     }
 }
 @media ( min-width: 992px) {
-    .card1{max-width: 65%;}
+    .card1{max-width: 80%;}
     .button button{
         width: 80%;
     }
 }
 @media ( min-width: 1200px) {
-    .card1{max-width: 50%;}
+    .card1{max-width: 70%;}
     .link:hover{
         transform: scale(1.4);
         transition:all .2s ease-in-out;
@@ -119,7 +123,7 @@ select{
     }
     @media (min-width:1500px){
         .card1{
-            max-width: 40%;
+            max-width: 60%;
         }
     }
 }

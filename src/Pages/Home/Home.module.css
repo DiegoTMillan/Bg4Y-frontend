@@ -101,5 +101,11 @@
             max-width: 30%;
             margin-left:15em;
         }
+        @media(min-width:2500px){
+            .reviews{
+                max-width: 25%;
+                margin-left: 25em;
+            }
+        }
     }
 }
