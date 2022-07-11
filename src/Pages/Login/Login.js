@@ -44,10 +44,6 @@ export const Login = (props) => {
       {loading && <Spinner />}
       {status === "succeeded" && user.status === "failed" && (
         // props.type === "Register" && (
-        // <Alert
-        //   type="error"
-        //   message="Sorry, something wrong has happened, please try again in a few minutes"
-        // />
         <Modal
         // show={show}
         text="The user email or password is not correct"

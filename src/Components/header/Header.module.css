@@ -47,6 +47,7 @@
   min-width: 30%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 /* these items only is visible under 565px */
 .optionalNav {

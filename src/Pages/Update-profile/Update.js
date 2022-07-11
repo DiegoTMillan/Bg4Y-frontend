@@ -13,8 +13,8 @@ export const Update = () => {
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const [updated, setUpdated] = useState(false);
-  const token = useSelector((state) => state.login.login.data.data.token)
-  console.log(token)
+  const token = useSelector((state) => state.login.login.data.data.token);
+  console.log(token);
 
   const [formValues, setFormValues] = useState(
     (user.data && {
@@ -98,7 +98,12 @@ export const Update = () => {
       {!user.data && <Navigate to="/login" replace={true} />}
       {loading && <Spinner />}
       {status === "succeeded" && user.status === "succeeded" && updated && (
-        <Alert message="Great! Your profile has been updated!" type="success" />
+        <Modal
+          // show={show}
+          text="Your profile has been correctly updated"
+          route="/dashboard"
+          link="Done"
+        />
       )}
 
       {!loading && user.data && (

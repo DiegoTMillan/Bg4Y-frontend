@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { loginActions } from "../store/loginSlice";
+import { Fragment } from "react";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -16,16 +17,13 @@ export const Header = () => {
     <header>
       <div className={classes.container}>
         {/* logo */}
-        {/* <div className={classes.logos}>
+        <div className={classes.rightIcons}>
+        <div className={classes.logos}>
           <i className={`${classes.logo} fa-solid fa-dice`}></i>
           <Link to="/">Bg4U</Link>
-        </div> */}
+        </div>
         {isLogged && user.status === "succeeded" && (
-          <div className={classes.rightIcons}>
-            <div className={classes.logos}>
-              <i className={`${classes.logo} fa-solid fa-dice`}></i>
-              <Link to="/">Bg4U</Link>
-            </div>
+          <Fragment>
             <div className={classes.logos}>
               <i className={`${classes.logo} fa-solid fa-address-card`}></i>
               <Link to="/dashboard">Profile</Link>
@@ -38,11 +36,10 @@ export const Header = () => {
                 Logout
               </Link>
             </div>
-          </div>
+          </Fragment>
         )}
         {!isLogged ||
           (isLogged && user.status === "failed" && (
-            <div className={classes.rightIcons}>
             <div
               // login button
               className={classes.loginNav}
@@ -51,11 +48,9 @@ export const Header = () => {
               <i
                 className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
               ></i>
-            </div>
             </div>
           ))}
         {!isLogged && user.status === undefined && (
-            <div className={classes.rightIcons}>
             <div
               // login button
               className={classes.loginNav}
@@ -65,8 +60,8 @@ export const Header = () => {
                 className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
               ></i>
             </div>
-            </div>
         )}
+        </div>
         {/* Navigation menu */}
         <div className={classes.menuNav}>
           <Link to="/boardgames">Boardgames</Link>
