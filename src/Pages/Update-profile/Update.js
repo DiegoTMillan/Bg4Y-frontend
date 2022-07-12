@@ -13,10 +13,11 @@ export const Update = () => {
   const status = useSelector((state) => state.login.status);
   const [updated, setUpdated] = useState(false);
   const token = useSelector((state) => state.login.login.data.data.token);
-  console.log(token);
+  const update = useSelector((state) => state.login.login.updated);
+  console.log(user)
 
   const [formValues, setFormValues] = useState(
-    (user.data && {
+    (user.data && !update && {
       _id: user.data.info[0]._id,
       first_name: user.data.info[0].first_name,
       last_name: user.data.info[0].last_name,
@@ -29,8 +30,22 @@ export const Update = () => {
       game_name: [],
       token: token,
     }) ||
+    (user.data && update && {
+      _id: user.info[0]._id,
+      first_name: user.info[0].first_name,
+      last_name: user.info[0].last_name,
+      password: user.info[0].password,
+      phone: user.info[0].phone,
+      city: user.info[0].city,
+      district: user.info[0].district,
+      photo: user.info[0].photo,
+      role: "user",
+      game_name: [],
+      token: token,
+    }) ||
       {}
   );
+  
   const handleInputChange = (e) => {
     if (e.target.name === "game_name") {
       let value = Array.from(
@@ -59,46 +74,14 @@ export const Update = () => {
         game_name: [],
       });
       setUpdated(true);
-      //EXPERIMENTO
-      // dispatch((data)).then((result) => {
-      //   setData({
-      //     _id: result.payload.data._id,
-      //     first_name: result.payload.data.first_name,
-      //     last_name: result.payload.data.last_name,
-      //     password: result.payload.data.password,
-      //     phone: result.payload.data.phone,
-      //     city: result.payload.data.city,
-      //     district: result.payload.data.district,
-      //     role: "user",
-      //     photo: result.payload.data.district,
-      //     game_name: [],
-      //   });
-      // });
-      //EXPERIMENTO
     });
   };
-
-  //EXPERIMENTO
-
-  // const [data, setData] = useState({
-  //   first_name: "",
-  //   last_name: "",
-  //   email: "",
-  //   password: "",
-  //   phone: "",
-  //   city: "",
-  //   district: "",
-  //   role: "user",
-  //   photo: "",
-  //   game_name: [],
-  // });
   return (
     <div className={classes.center}>
       {!user.data && <Navigate to="/login" replace={true} />}
       {loading && <Spinner />}
       {status === "succeeded" && user.status === "succeeded" && updated && (
         <Modal
-          // show={show}
           text="Profile updated successfully "
           route="/dashboard"
           link="Done"

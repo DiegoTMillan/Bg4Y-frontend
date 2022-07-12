@@ -62,7 +62,7 @@ export const Login = () => {
               name="email"
               value={data.email}
               placeholder="Email"
-
+              autoComplete="off"
               onChange={handleChange}
             />
             <label htmlFor="password" className={classes.password}>
@@ -75,6 +75,7 @@ export const Login = () => {
               name="password"
               placeholder="Password"
               onChange={handleChange}
+              autoComplete="new-password"
               value={data.password}
             />
             <div className={classes.registeredLog}>

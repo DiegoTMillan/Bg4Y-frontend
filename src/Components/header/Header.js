@@ -15,16 +15,18 @@ export const Header = () => {
   return (
     <header>
       <div className={classes.container}>
-        {/* logo */}
-        <div className={classes.logos1}>
-          <i className={`${classes.logo} fa-solid fa-dice`}></i>
-          <Link to="/">Bg4U</Link>
-        </div>
-        {/* Navigation menu */}
-        <div className={classes.menuNav}>
-          <Link to="/boardgames">Boardgames</Link>
-          <Link to="/new1">Last news</Link>
-          <Link to="/review1">Last review</Link>
+        <div className={classes.logoContainer}>
+          {/* logo */}
+          <div className={classes.logos1}>
+            <i className={`${classes.logo} fa-solid fa-dice`}></i>
+            <Link to="/">Bg4U</Link>
+          </div>
+          {/* Navigation menu */}
+          <div className={classes.menuNav}>
+            <Link to="/boardgames">Boardgames</Link>
+            <Link to="/new1">Last news</Link>
+            <Link to="/review1">Last review</Link>
+          </div>
         </div>
         {/* icons changing if you are logged or not */}
         {isLogged && user.status === "succeeded" && (
@@ -45,16 +47,16 @@ export const Header = () => {
         )}
         {!isLogged ||
           (isLogged && user.status === "failed" && (
-              <div
-                className={classes.loginNav}
-                onClick={(event) => (window.location.href = "/login")}
-              >
-                <i
-                  className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
-                ></i>
-              </div>
+            <div
+              className={classes.loginNav}
+              onClick={(event) => (window.location.href = "/login")}
+            >
+              <i
+                className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
+              ></i>
+            </div>
           ))}
-        {!isLogged && user.status === undefined && (
+        {!isLogged && (
           <div
             className={classes.loginNav}
             onClick={(event) => (window.location.href = "/login")}

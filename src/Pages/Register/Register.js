@@ -117,6 +117,7 @@ export const Register = () => {;
                   placeholder="Email"
                   required
                   onChange={handleChange}
+                  autoComplete="off"
                 />
                 <label htmlFor="password">Write your password</label>
                 <input
@@ -128,6 +129,7 @@ export const Register = () => {;
                   required
                   onChange={handleChange}
                   value={data.password}
+                  autoComplete="new-password"
                 />
                 <label htmlFor="phone">Write your phone</label>
                 <input

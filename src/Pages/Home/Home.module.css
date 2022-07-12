@@ -62,17 +62,18 @@
 @media (min-width:1200px) {
     .center{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        margin-right: 3em;
     }
     .news{
-        max-width: 60%;
-        min-height: 170em;
+        min-width: 40%;
+        max-width: 50%;
+        max-height: 170em;
+        /* margin-top: 1.2em; */
     }
     .reviews{
-        width: 45%;
-        min-height: 170em;
+        max-width: 42%;
+        margin-left: 10em;
+        max-height: 170em;
     }
     .newsTitle{
         display: none;
@@ -86,25 +87,26 @@
         font-size: 2rem;
         padding: 1em;
         color: var(--base);
-        margin:2em 0em;
+        margin:3em 0em;
     }
     @media(min-width: 1450px){
         .news{
-            max-width: 70%;
+            max-width: 50%;
         }
         .reviews{
             max-width: 40%;
+            margin-left: 10em;
         }
     }
     @media(min-width:1600px){
         .reviews{
-            max-width: 30%;
-            margin-left:15em;
+            max-width: 40%;
+            margin-left:12em;
         }
-        @media(min-width:2500px){
+        @media(min-width:1800px){
             .reviews{
-                max-width: 25%;
-                margin-left: 25em;
+                max-width: 40%;
+                margin-left: 16em;
             }
         }
     }

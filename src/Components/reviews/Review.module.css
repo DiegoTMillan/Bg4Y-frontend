@@ -1,5 +1,4 @@
 .container{
-    width: 97%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -53,15 +52,14 @@
 }
 /* 992px */
 @media (min-width: 992px){
-    .container{
-        width: 75%;
-    }
+
 }
 /* 1200px */
 @media (min-width:1200px) {
     .container{
-        width: 100%;
-        padding: 1.5em 3em 1em .5em;
+        width: 95%;
+        /* padding: 1.5em 3em 1em .5em; */
+        /* padding: 3em; */
     }
     .container div{
         padding:0.5em;
