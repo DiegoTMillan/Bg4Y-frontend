@@ -4,8 +4,8 @@ export const Review1 = () => {
     return (
             <TextPage
             addTitle="REVIEW"
-            url="https://ksr-ugc.imgix.net/assets/024/933/912/046573ee55d8eeaae3c33f9660149d28_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1556465339&auto=format&frame=1&q=92&s=9b6bb3518eeb1b8d7f9b58b89a967646"
-            mainTitle="On Mars, a deep review about Vital Lacerda's last game"
+            url="https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80"
+            mainTitle="Settlers of Catan, a classic that never dies"
             subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus lacus mi, non congue purus lobortis ut. Nam pulvinar bibendum dui. Aliquam porttitor tincidunt tortor."
             author="Diego Tapia "
             date=" 20/06/2022"

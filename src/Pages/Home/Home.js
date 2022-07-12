@@ -41,22 +41,22 @@ export const Home = () => {
             <h1 className={classes.reviewsTitle}>Reviews</h1>
           </div>
           <Review
-            url="https://ksr-ugc.imgix.net/assets/024/933/912/046573ee55d8eeaae3c33f9660149d28_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1556465339&auto=format&frame=1&q=92&s=9b6bb3518eeb1b8d7f9b58b89a967646"
-            text="On Mars, a deep review about Vital Lacerda's last game"
+            url="https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80"
+            text="Settlers of Catan, a classic that never dies"
             author="Diego Tapia"
             date="20/06/22"
             link="/review1"
           />
           <Review
-            url="https://live.staticflickr.com/65535/52074782049_19320915ec_b.jpg"
-            text="Ark Nova, Is it really the best boardgame of Essen 2021?"
+            url="https://images.unsplash.com/photo-1585504198199-20277593b94f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1617&q=80"
+            text="Do you want to be a roman trader? Let's see Concordia"
             author="Diego Tapia"
             date="07/06/22"
             link="/review2"
           />
           <Review
-            url="https://cf.geekdo-images.com/y264FIxNHrfwWFg_Ir9wgA__large/img/wd0pWiEjYOppXp_fFWoSaahDsTg=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic5783313.jpg"
-            text="Beyond the Sun, let's see if we can save humankind"
+            url="https://images.pexels.com/photos/4691567/pexels-photo-4691567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            text="Don't forget the departure hour, Ticket to ride is ready"
             author="Diego Tapia"
             date="05/06/22"
             link="/review3"

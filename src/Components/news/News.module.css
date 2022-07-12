@@ -47,9 +47,16 @@
     .newImg{
         height: 35em;
     }
+}@media (min-width: 833px){
+    .container{
+        width: 70%;
+    }
 }
 /* 992px */
 @media (min-width: 992px){
+        .center{
+            max-width: 70%;
+        }
 }
 /* 1200px */
 @media (min-width:1200px) {

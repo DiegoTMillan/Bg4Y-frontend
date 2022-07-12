@@ -4,8 +4,8 @@ export const Review2 = () => {
     return (
             <TextPage
             addTitle="REVIEW"
-            url="https://live.staticflickr.com/65535/52074782049_19320915ec_b.jpg"
-            mainTitle="Ark Nova, Is it really the best boardgame of Essen 2021?"
+            url="https://images.unsplash.com/photo-1585504198199-20277593b94f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1617&q=80"
+            mainTitle="Do you want to be a roman trader? Let's see Concordia"
             subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus lacus mi, non congue purus lobortis ut. Nam pulvinar bibendum dui. Aliquam porttitor tincidunt tortor."
             author="Diego Tapia "
             date=" 07/06/2022"

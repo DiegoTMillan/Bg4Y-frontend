@@ -4,8 +4,8 @@ export const Review3 = () => {
     return (
             <TextPage
             addTitle="REVIEW"
-            url="https://cf.geekdo-images.com/y264FIxNHrfwWFg_Ir9wgA__large/img/wd0pWiEjYOppXp_fFWoSaahDsTg=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic5783313.jpg"
-            mainTitle="Beyond the Sun, let's see if we can save humankind"
+            url="https://images.pexels.com/photos/4691567/pexels-photo-4691567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            mainTitle="Don't forget the departure hour, Ticket to ride is ready"
             subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus lacus mi, non congue purus lobortis ut. Nam pulvinar bibendum dui. Aliquam porttitor tincidunt tortor."
             author="Diego Tapia "
             date=" 05/06/2022"

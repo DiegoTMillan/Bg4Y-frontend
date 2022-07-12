@@ -28,7 +28,6 @@ export const Friends = () => {
         console.log(error);
       });
   };
-  console.log(usersDetails);
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -44,7 +43,6 @@ export const Friends = () => {
       }
     });
     setUsersDetails(textResult);
-    console.log(usersDetails);
   };
 
   useEffect(() => {

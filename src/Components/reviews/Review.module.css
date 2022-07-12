@@ -49,10 +49,17 @@
     .revImg{
         height: 35em;
     }
+/* 833px */
+}@media (min-width: 833px){
+    .container{
+        width: 70%;
+    }
 }
 /* 992px */
 @media (min-width: 992px){
-
+    .container{
+        width: 70%;
+    }
 }
 /* 1200px */
 @media (min-width:1200px) {
