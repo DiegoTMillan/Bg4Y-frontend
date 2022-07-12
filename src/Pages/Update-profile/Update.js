@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../../Components/store/loginSlice";
 import { Navigate } from "react-router-dom";
-import { Alert } from "../../Components/alert/Alert";
 import { Modal } from "../../Components/modal/Modal";
 
 export const Update = () => {
