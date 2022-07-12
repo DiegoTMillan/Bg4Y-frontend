@@ -1,4 +1,4 @@
-# Bg4Y-backend :computer:
+# Bg4Y-frontend :computer:
 Boardgames 4 you Frontend.\
 This is only the front of a bigger project. Here is the URL of the other repository:
   ### Bg4Y-backend
