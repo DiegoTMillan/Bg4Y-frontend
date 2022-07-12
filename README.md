@@ -3,7 +3,7 @@ Boardgames 4 you Frontend.\
 This is only the front of a bigger project. Here is the URL of the other repository:
   ### Bg4Y-backend
   ```
-  https://github.com/DiegoTMillan/Bg4Y-backend.git
+  https://github.com/DiegoTMillan/Bg4Y-frontend.git
   ```
 
 ## Presentation :green_book:
