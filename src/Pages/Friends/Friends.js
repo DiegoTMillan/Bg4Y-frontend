@@ -11,8 +11,6 @@ export const Friends = () => {
   const [searchInput, setSearchInput] = useState("");
 
   const token = useSelector((state) => state.login.login.data.data.token);
-  const loading = useSelector((state) => state.login.login.loading);
-  const status = useSelector((state) => state.login.status);
 
   const getInfo = async () => {
     await axios

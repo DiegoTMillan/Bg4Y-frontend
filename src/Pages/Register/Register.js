@@ -2,12 +2,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addNewUser} from "../../Components/store/loginSlice";
 import { Spinner } from "../../Components/spinner/Spinner";
-import {Alert} from "../../Components/alert/Alert"
 import classes from "./Register.module.css";
 import { useState } from "react";
 import { Modal } from "../../Components/modal/Modal";
 
-export const Register = (props) => {;
+export const Register = () => {;
   const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
   const loading = useSelector((state) => state.login.login.loading);
@@ -71,8 +70,6 @@ export const Register = (props) => {;
         )}
       {status === "succeeded" &&
         user.status === "succeeded" && (
-          // <Alert type="success" message="You have been successfully registered. Now you can login and enjoy!" />
-          // <Navigate to="/dashboard" replace />
           <Modal 
         show={show}
         text="Great! You are now registered!"
@@ -201,13 +198,6 @@ export const Register = (props) => {;
                   <option value="Secret code">Secret code</option>
                   <option value="Civilization">Civilization</option>
                   <option value="Junta">Junta</option>
-                  {/* {gamesDetails.data.map((game, i) => {
-                    return (
-                      <option key={i} value={game.name}>
-                        {game.name}
-                      </option>
-                    );
-                  })} */}
                 </select>
               </div>
             </div>

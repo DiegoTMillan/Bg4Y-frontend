@@ -1,5 +1,3 @@
-//import components, tools, and css
-import { Fragment } from "react";
 import { TextPage } from "../../Components/textPage/TextPage";
 
 export const New1 = () => {

@@ -26,6 +26,7 @@ export const Header = () => {
           <Link to="/new1">Last news</Link>
           <Link to="/review1">Last review</Link>
         </div>
+        {/* icons changing if you are logged or not */}
         {isLogged && user.status === "succeeded" && (
           <div className={classes.rightIcons}>
             <div className={classes.logos2}>
@@ -45,7 +46,6 @@ export const Header = () => {
         {!isLogged ||
           (isLogged && user.status === "failed" && (
               <div
-                // login button
                 className={classes.loginNav}
                 onClick={(event) => (window.location.href = "/login")}
               >
@@ -56,7 +56,6 @@ export const Header = () => {
           ))}
         {!isLogged && user.status === undefined && (
           <div
-            // login button
             className={classes.loginNav}
             onClick={(event) => (window.location.href = "/login")}
           >
@@ -65,15 +64,6 @@ export const Header = () => {
             ></i>
           </div>
         )}
-        {/* <div
-          // login button
-          className={classes.loginNav}
-          onClick={(event) => (window.location.href = "/login")}
-        >
-          <i
-            className={`${classes.loginIcon} fa-solid fa-right-to-bracket`}
-          ></i>
-        </div> */}
       </div>
       {/* this navigation menu only appears under 565px */}
       <div className={classes.optionalNav}>

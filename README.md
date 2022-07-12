@@ -37,10 +37,10 @@ npm install
  3. ### Adding tools
 
 
-Now we have to install redux, @reduxjs/toolkit and router-dom
+Now we have to install redux, @reduxjs/toolkit, axios and router-dom
 
 ```
-npm install react-redux @reduxjs/toolkit  react-router-dom
+npm install react-redux @reduxjs/toolkit axios  react-router-dom
 ```
 
 1. ### Make it function
@@ -60,7 +60,6 @@ React was the choice for the frontend because it was one of the objetives of the
   - This is the structure of most important components.
 
 ```
-  <Provider store={store}>
   <Provider store={store}>
     <BrowserRouter>
     <ScrollToTop/>

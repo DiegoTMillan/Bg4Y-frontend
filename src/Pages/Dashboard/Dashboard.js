@@ -1,6 +1,5 @@
 import { Spinner } from "../../Components/spinner/Spinner";
 import classes from "./Dashboard.module.css";
-// import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";

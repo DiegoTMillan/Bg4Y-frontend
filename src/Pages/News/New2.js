@@ -1,10 +1,8 @@
-//import components, tools, and css
 import { Fragment } from "react";
 import { TextPage } from "../../Components/textPage/TextPage";
 
 export const New2 = () => {
     return (
-        <Fragment>
             <TextPage
             addTitle="ABSTRACT GAMES"
             url="https://images.pexels.com/photos/8111328/pexels-photo-8111328.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8111328.jpg&fm=jpg"
@@ -20,6 +18,5 @@ export const New2 = () => {
             
             Quisque tincidunt, arcu eu viverra tristique, ipsum neque rhoncus dui, non molestie lorem augue id ligula. Phasellus lacinia accumsan ex, id cursus metus porttitor ut. Vestibulum eget est nec sapien rhoncus convallis at ullamcorper arcu. Fusce dignissim ante magna, vitae sodales nisi auctor auctor. Sed pharetra enim sed massa feugiat interdum. Nam quis sem a ligula finibus consequat. Mauris rhoncus vehicula ligula, a congue orci vestibulum ac."
             />
-        </Fragment>
     )
 }

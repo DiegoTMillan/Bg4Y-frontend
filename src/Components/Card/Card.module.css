@@ -112,18 +112,6 @@
   color: white;
 }
 
-/* .button button{
-    margin-top: 0.5em;
-    width: 90%;
-    padding: 8px 4px;
-    border-radius: 5px;
-    background-color: #483D8B;
-    font-size: 1.6rem;
-    color: white;
-    font-weight: bold;
-    border: 0;
-} */
-
 /* breakpoints */
 @media (min-width: 565px) {
   .img {

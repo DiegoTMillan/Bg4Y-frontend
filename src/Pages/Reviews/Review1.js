@@ -1,10 +1,7 @@
-//import components, tools, and css
-import { Fragment } from "react"
 import { TextPage } from "../../Components/textPage/TextPage";
 
 export const Review1 = () => {
     return (
-        <Fragment>
             <TextPage
             addTitle="REVIEW"
             url="https://ksr-ugc.imgix.net/assets/024/933/912/046573ee55d8eeaae3c33f9660149d28_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1556465339&auto=format&frame=1&q=92&s=9b6bb3518eeb1b8d7f9b58b89a967646"
@@ -20,6 +17,5 @@ export const Review1 = () => {
             
             Quisque tincidunt, arcu eu viverra tristique, ipsum neque rhoncus dui, non molestie lorem augue id ligula. Phasellus lacinia accumsan ex, id cursus metus porttitor ut. Vestibulum eget est nec sapien rhoncus convallis at ullamcorper arcu. Fusce dignissim ante magna, vitae sodales nisi auctor auctor. Sed pharetra enim sed massa feugiat interdum. Nam quis sem a ligula finibus consequat. Mauris rhoncus vehicula ligula, a congue orci vestibulum ac."
             />
-        </Fragment>
     )
 }

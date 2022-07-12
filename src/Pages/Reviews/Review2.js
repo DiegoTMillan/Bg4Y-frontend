@@ -1,10 +1,7 @@
-//import components, tools, and css
-import { Fragment } from "react"
 import { TextPage } from "../../Components/textPage/TextPage";
 
 export const Review2 = () => {
     return (
-        <Fragment>
             <TextPage
             addTitle="REVIEW"
             url="https://live.staticflickr.com/65535/52074782049_19320915ec_b.jpg"
@@ -20,6 +17,5 @@ export const Review2 = () => {
             
             Quisque tincidunt, arcu eu viverra tristique, ipsum neque rhoncus dui, non molestie lorem augue id ligula. Phasellus lacinia accumsan ex, id cursus metus porttitor ut. Vestibulum eget est nec sapien rhoncus convallis at ullamcorper arcu. Fusce dignissim ante magna, vitae sodales nisi auctor auctor. Sed pharetra enim sed massa feugiat interdum. Nam quis sem a ligula finibus consequat. Mauris rhoncus vehicula ligula, a congue orci vestibulum ac."
             />
-        </Fragment>
     )
 }

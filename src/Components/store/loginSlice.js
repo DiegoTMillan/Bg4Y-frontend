@@ -1,6 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import Auth from "../Auth/Auth";
 
 const loginURL = "http://127.0.0.1:8000/login";
 const userURL = "http://127.0.0.1:8000/users";
@@ -71,24 +69,24 @@ export const updateProfile = createAsyncThunk(
   }
 );
 
-export const getFriends = createAsyncThunk(
-  "login/getFriends",
-  async (data, { rejectWithValue }) => {
-    try {
-      const response = await fetch(userURL + "/", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          // "authorization": "Bearer " +
-        },
-      });
-      // console.log(response.json())
-      return response.json();
-    } catch (error) {
-      return rejectWithValue("Failed to fetch, trying to get friends");
-    }
-  }
-);
+// export const getFriends = createAsyncThunk(
+//   "login/getFriends",
+//   async (data, { rejectWithValue }) => {
+//     try {
+//       const response = await fetch(userURL + "/", {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//           // "authorization": "Bearer " +
+//         },
+//       });
+//       // console.log(response.json())
+//       return response.json();
+//     } catch (error) {
+//       return rejectWithValue("Failed to fetch, trying to get friends");
+//     }
+//   }
+// );
 
 export const loginSlice = createSlice({
   name: "login",
@@ -154,22 +152,22 @@ export const loginSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
-    [getFriends.fulfilled]: (state, action) => {
-      // console.log(action.payload)
-      state.login.data.data = action.payload;
-      state.login.loading = false;
-      state.login.isLogged = true;
-      state.status = "succeeded";
-    },
-    [getFriends.pending]: (state) => {
-      state.login.loading = true;
-      state.status = "loading";
-    },
-    [getFriends.rejected]: (state, action) => {
-      state.login.loading = false;
-      state.status = "rejected";
-      state.error = action.payload;
-    },
+    // [getFriends.fulfilled]: (state, action) => {
+    //   // console.log(action.payload)
+    //   state.login.data.data = action.payload;
+    //   state.login.loading = false;
+    //   state.login.isLogged = true;
+    //   state.status = "succeeded";
+    // },
+    // [getFriends.pending]: (state) => {
+    //   state.login.loading = true;
+    //   state.status = "loading";
+    // },
+    // [getFriends.rejected]: (state, action) => {
+    //   state.login.loading = false;
+    //   state.status = "rejected";
+    //   state.error = action.payload;
+    // },
   },
 });
 

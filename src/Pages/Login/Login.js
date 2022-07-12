@@ -2,21 +2,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "../../Components/store/loginSlice";
 import { Spinner } from "../../Components/spinner/Spinner";
-import { Alert } from "../../Components/alert/Alert";
 import { Link } from "react-router-dom";
 import classes from "./Login.module.css";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import { Modal } from "../../Components/modal/Modal";
 
-export const Login = (props) => {
+export const Login = () => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
-  const error = useSelector((state) => state.login.error);
-  const [show, setShow] = useState(true)
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -43,16 +40,13 @@ export const Login = (props) => {
     <div className={classes.center}>
       {loading && <Spinner />}
       {status === "succeeded" && user.status === "failed" && (
-        // props.type === "Register" && (
         <Modal
-        // show={show}
         text="Sorry, email or password are wrong"
         route="/"
         link="try again"
         />
       )}
       {status === "succeeded" && user.status === "succeeded" && (
-        // <Navigate to={`/dashboard/${user.data.info[0]._id}`} replace={true} />
         <Navigate to='/dashboard' replace={true} />
       )}
       {!loading && (
