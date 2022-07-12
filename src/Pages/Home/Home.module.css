@@ -89,9 +89,6 @@
         color: var(--base);
         margin:3em 0em;
     }
-    .titles h1 {
-        margin-left: 1em;
-    }
     @media(min-width: 1450px){
         .news{
             max-width: 50%;
